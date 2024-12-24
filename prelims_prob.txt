@@ -1,0 +1,1416 @@
+Le complementture notes for Prelims Probability Matthias Winkel Oxford, Mi complementhaelmas Term 2024 winkel@stats.ox.a complement.uk orwinkel@maths.ox.a complement.uk Version of 26 September 2024
+
+Ba complementkground Probability theory is one of the fastest growing areas of mathemati complements.
+Probabilisti complement arguments are used in a tremendous range of appli complementations from number theory to geneti complements, from physi complements to nan complemente.
+Probability is a core part of computer s complementien complemente and a key tool in analysis.
+And of course it underpins statisti complements.
+It is a subje complementt that impinges on our daily lives: we come a complementross it when we go to the do complementtor or buy a lottery ti complementket, but we're also using probability when we listen to the radio or use a mobile phone, or when we enhan complemente digital images and when our immune system ghts a cold.
+Whether you knew it or not, from the moment you were con complementeived, probability played an important role in your life.
+We all have some idea of what probability is: maybe we think of it as an approximation to long run frequen complementies in a sequen complemente of repeated trials, or perhaps as a measure of degree of belief warranted by some eviden complemente.
+Ea complementh of these interpretations is valuable in certain situations.
+For example, the probability that I get a head if I ip a coin is sensibly interpreted as the proportion of heads I get if I ip that same coin many times.
+But there are some situations where it simply does not make sense to think of repeating the experiment many times.
+For example, the probability that `UK interest rates will be more than 6% next Mar complementh' or the probability that `I'll be involved in a car a complementcident in the next twelve months' cannot be determined by repeating the experiment many times and looking for a long run frequen complementy.
+The philosophi complemental issue of interpretation is not one that we'll resolve in this course.
+What wewill do is set up the abstra complementt framework ne complementessary to deal with compli complementated probabilisti complement questions.
+These notes are essentially those written by James Martin, based on a previous versions by Christina Golds complementhmidt, Alison Etheridge, Neil Laws and Jonathan Mar complementhini.
+I'm very glad to re complementeive any comments or corre complementtions at winkel@stats.ox.a complement.uk orwinkel@maths.ox.a complement.uk .
+The synopsis and reading list from the course handbook are reprodu complemented on the next page for your convenien complemente.
+The suggested texts are an ex complementellent sour complemente of further examples.
+I hope you enjoy the course!
+1
+
+Overview An understanding of random phenomena is be complementoming in complementreasingly important in today's world within so complemential and politi complemental s complementien complementes, nan complemente, life s complementien complementes and many other elds.
+The aim of this introdu complementtion to probability is to develop the con complementept of chan complemente in a mathemati complemental framework.
+Random variables are introdu complemented, with examples involving most of the common distributions.
+Learning Out complementomes Students should have a knowledge and understanding of basi complement probability con complementepts, in complementluding conditional probability.
+They should know what is meant by a random variable, and have met the common distributions and their probability mass fun complementtions.
+They should understand the con complementepts of expe complementtation and varian complemente of a random variable.
+A key con complementept is that of independen complemente whi complementh will be introdu complemented for events and random variables.
+Synopsis Sample spa complemente, events, probability measure.
+Permutations and combinations, sampling with or without repla complementement.
+Conditional probability, partitions of the sample spa complemente, law of total prob - ability, Bayes' Theorem.
+Independen complemente.
+Dis complementrete random variables, probability mass fun complementtions, examples: Bernoulli, binomial, Pois - son, geometri complement.
+Expe complementtation, expe complementtation of a fun complementtion of a dis complementrete random variable, varian complemente.
+Joint distributions of several dis complementrete random variables.
+Marginal and conditional distributions.
+Independen complemente.
+Conditional expe complementtation, law of total probability for expe complementtations.
+Expe complementtations of fun complementtions of more than one dis complementrete random variable, covarian complemente, varian complemente of a sum of dependent dis complementrete random variables.
+Solution of rst and se complementond order linear di eren complemente equations.
+Random walks ( nite state spa complemente only).
+Probability generating fun complementtions, use in cal complementulating expe complementtations.
+Examples in complementluding random sums and bran complementhing pro complementesses.
+Continuous random variables, cumulative distribution fun complementtions, probability density fun complementtions, examples: uniform, exponential, gamma, normal.
+Expe complementtation, expe complementtation of a fun complementtion of a continuous random variable, varian complemente.
+Distribution of a fun complementtion of a single continuous random variable.
+Joint probability density fun complementtions of several continuous random variables (re complementtangular regions only).
+Marginal distributions.
+Independen complemente.
+Expe complementtations of fun complementtions of jointly con - tinuous random variables, covarian complemente, varian complemente of a sum of dependent jointly continuous random variables.
+Random sample, sums of independent random variables.
+Markov's inequality, Chebyshev's inequality, Weak Law of Large Numbers.
+Reading List 1.
+G.
+R.
+Grimmett and D.
+J.
+A.
+Welsh, Probability: An Introdu complementtion , 2 nd edition, Oxford University Press, 2014, Chapters 1{5, 6.1{6.3, 7.1{7.3, 7.5 (Markov's inequality), 8.1 - 8.2, 10.4.
+2.
+J.
+Pitman, Probability , Springer - Verlag, 1993.
+3.
+S.
+Ross, A First Course In Probability , Prenti complemente - Hall, 1994.
+4.
+D.
+Stirzaker, Elementary Probability , Cambridge University Press, 1994, Chapters 1{4, 5.1{ 5.6, 6.1{6.3, 7.1, 7.2, 7.4, 8.1, 8.3, 8.5 (ex complementluding the joint generating fun complementtion).
+2
+
+Chapter 1 Events and probability 1.1 Introdu complementtion We will think of performing an experiment whi complementh has a set of possible out complementomes .
+We call thesample spa complemente .
+For example, (a) tossing a coin: = fH;Tg; (b) throwing two di complemente: = f(i;j): 1i;j6 g.
+Anevent is a subset of .
+An event A o complementcurs if, when the experiment is performed, the out complementome!2 satis es!2 A.
+You should think of events as things you can de complementide have or have not happened by looking at the out complementome of your experiment.
+For example, (a) coming up heads: A = fHg; (b) getting a total of 4: A = f(1;3);(2;2);(3;1)g.
+The complement of AisA complement: = nAand means \ Adoes not o complementcur".
+For events AandB, A[Bmeans \at least one of AandBo complementcurs"; A\Bmeans \both AandBo complementcur"; AnBmeans \Ao complementcurs but Bdoes not".
+IfA\B = ;we say that AandBaredisjoint { they cannot both o complementcur.
+We will assign a probability P(A) to ea complementh event A.
+Later on we will dis complementuss general rules (or \axioms") governing how these probabilities ought to behave.
+For now, let's consider a simple and spe complemential case, where is a nite set, and the probability assigned to a subset Aof is proportional to the size of A; that is, P(A) = jAj j j: In that case for our examples above, we get: (a) for a fair coin, P(A) = 1 = 2; (b) for the two di complemente, P(A) = 1 = 12.
+Example (b) demonstrates illustrates the need for counting in the situation where we have a nite number of possible out complementomes to our experiment, all equally likely.
+The sample spa complemente has 36 elements (6 ways of choosing iand 6 ways of choosing j).
+Sin complementeA = f(1;3);(2;2);(3;1)g complementontains 3 sample points, and all sample points are equally likely, we get P(A) = 3 = 36 = 1 = 12.
+We want to be able to ta complementkle mu complementh more compli complementated counting problems.
+3
+
+1.2 Counting Many of you will have seen before the basi complement ideas involving permutations and combinations.
+If you haven't, or if you nd them confusing, then you can nd more details in the rst chapter of Introdu complementtion to Probability by Ross.
+Arranging distinguishable obje complementts Suppose that we have ndistinguishable obje complementts (e.g.
+the numbers 1 ;2;:::;n ).
+How many ways to order them ( permutations ) are there?
+If we have three obje complementts a,b,cthen the answer is 6: ab complement,a complementb,ba complement,b complementa,caband complementba.
+In general, there are n complementhoi complementes for the rst obje complementt in our ordering.
+Then, whatever the rst obje complementt was, we have n 1 choi complementes for the se complementond obje complementt.
+Carrying on, we have n m + 1 choi complementes for themth obje complementt and, nally, a single choi complemente for the nth.
+So there are n(n 1):::2:1 = n!
+di erent orderings.
+Sin complementen!
+in complementreases extremely fast, it is sometimes useful to know Stirling's formula: n!p 2nn + 1 2 e n; wheref(n)g(n) meansf(n) = g(n)!1 asn!1 .
+This is astonishingly a complementcurate even for quite smalln.
+For example, the error is of the order of 1% when n = 10.
+Arrangements when not all obje complementts are distinguishable What happens if not all the obje complementts are distinguishable?
+For example, how many di erent ar - rangements are there of a;a;a;b;c;d ?
+If we hada1;a2;a3;b;c;d , there would be 6!
+arrangements.
+Ea complementh arrangement (e.g.
+b;a2;d;a 3; a1;c) is one of 3!
+whi complementh di er only in the ordering of a1;a2;a3.
+So the 6!
+arrangements fall into groups of size 3!
+whi complementh are indistinguishable when we put a1 = a2 = a3.
+We want the number of groups whi complementh is just 6!
+= 3!.
+We can immediately generalise this.
+For example, to count the arrangements of a;a;a;b;b;d , play the same game.
+We know how many arrangements there are if the b's are distinguishable, but then all su complementh arrangements fall into pairs whi complementh di er only in the ordering of b1,b2, and we see that the number of arrangements is 6!
+= 3!2!.
+Lemma 1.1.
+The number of arrangements of the nobje complementts 1;:::; 1|{z} m1 times; 2;:::; 2|{z} m2 times;:::; k;:::; k|{z} mktimes where iappearsmitimes andm1 +  + mk = nis n!
+m1!m2!mk!: (1.1) Example 1.2.
+The number of arrangements of the letters of STATISTICS is10!
+3!3!2!.
+If there are just two types of obje complementt then, sin complemente m1 + m2 = n, the expression (1.1) is just a binomial coecient, n m1 = n!
+m1!(n m1)!
+=  n m2 .
+Note: we will always use the notation n m = n!
+m!(n m)!: 4
+
+Re complementall the binomial theorem, (x + y)n = nX m = 0n m xmyn m: You can see where the binomial coecient comes from be complementause writing (x + y)n = (x + y)(x + y)(x + y) and multiplying out, ea complementh term involves one pi complementk from ea complementh bra complementket.
+The coecient of xmyn m is the number of sequen complementes of pi complementks that give xexa complementtlymtimes andyexa complementtlyn mtimes and that's the number of ways of choosing the m\slots" for the x's.
+The expression (1.1) is called a multinomial coecient be complementause it is the coecient of am1 1amk k in the expansion of (a1 +  + ak)n wherem1 + mk = n.
+We sometimes write n m1 m2::: mk for the multinomial coecient.
+Instead of thinking in terms of arrangements, we can think of our binomial coecient in terms of choi complementes.
+For example, if I have to choose a committee of size kfromnpeople, there are n k ways to do it.
+To see how this ties in, stand the npeople in a line.
+For ea complementh arrangement of k 1's andn k0's I can create a di erent committee by pi complementking the ith person for the committee if theith term in the arrangement is a 1.
+Example 1.3.
+Pi complementk a team of mplayers from a squad of n, all possible teams being equally likely.
+Set = ( (i1;i2;:::;in):ik2 f0;1 gandnX k = 1 ik = m) ; where ik = ( 1 if playerkis pi complementked, 0 otherwise.
+LetA = fplayer 1 is in the team g.
+Then P(A) = #teams that in complementlude player 1 #possible teams =  n 1 m 1 (nm) = m n: Many counting problems can be solved by nding a bije complementtion (that is, a one - to - one correspon - den complemente) between the obje complementts we want to enumerate and other obje complementts that we already know how to enumerate.
+Example 1.4.
+How many distin complementt non - negative integer - valued solutions of the equation x1 + x2 +  + xm = n are there?
+Solution.
+Consider a sequen complemente of n?'s andm 1 j's.
+There is a bije complementtion between su complementh sequen complementes and non - negative integer - valued solutions to the equation.
+For example, if m = 4 andn = 3, ?
+?|{z} x1 = 2 j|{z} x2 = 0 j?|{z} x3 = 1 j|{z} x4 = 0 There are n + m 1 n sequen complementes of n ?'s andm 1 j's and, hen complemente, the same number of solutions to the equation.
+5
+
+It is often possible to perform quite complex counting arguments by manipulating binomial coecients.
+Conversely, sometimes one wants to prove relationships between binomial coecients and this can most easily be done by a counting argument.
+Here is one famous example: Lemma 1.5 (Vandermonde's identity) .Fork;m;n0, m + n k = kX j = 0m jn k j ; (1.2) where we use the convention m j = 0 forj > m .
+Proof.
+Suppose we choose a committee consisting of kpeople from a group of mmen andn women.
+There are m + n k ways of doing this whi complementh is the left - hand side of (1.2).
+Now the number of men in the committee is some j2 f0;1;:::;kgand then it contains k j women.
+The number of ways of choosing the jmen is m j and for ea complementh su complementh choi complemente there are n k j choi complementes for the women who make up the rest of the committee.
+So there are m j n k j committees with exa complementtly jmen and summing over jwe get that the total number of committees is given by the right - hand side of (1.2).
+An aside on sizes of sets In this course, we will often deal with nite colle complementtions of obje complementts, as in our counting examples.
+We will also want to be able to deal with in nite sets, and we will want to distinguish between those that are countable and those that are un complementountable .
+An in nite set Sis called countable (or complementountably in nite ) if there is a bije complementtion between S and the natural numbers N.
+That is, we can write Sas a list:S = fx1;x2;x3;:::g = fxi:i2 Ng.
+OtherwiseSis called un complementountable .
+The natural numbers are themselves countable (take xi = i), as are the rational numbers, but the real numbers, for example, are not.
+(Those of you doing Analysis I will see mu complementh more about this there.) 1.3 The axiomati complement approa complementh De nition 1.6.
+Aprobability spa complemente is a triple ( ;F;P) where 1.
+is a set, called the sample spa complemente , 2.Fis a colle complementtion of subsets of , called events , satisfying axioms F1{F3 below, 3.Pis aprobability measure , whi complementh is a fun complementtion P:F!Rsatisfying axioms P1{P3 below.1 Our axioms are as follows: The axioms of probability Fis a colle complementtion of subsets of , with: F1: 2 F.
+F2: IfA2 F, then also A complement2 F.
+F3: IffAi;i2 Igis a nite or countably in nite colle complementtion of members of F, thenS i2 IAi2 F.
+Pis a fun complementtion from FtoR, with: P1: For allA2 F,P(A)0.
+P2:P( ) = 1.
+P3: IffAi;i2 Igis a nite or countably in nite colle complementtion of members of F, andAi\Aj = ; fori6 = j, then P(S i2 IAi) = P i2 IP(Ai).
+1 P:F !Rmeans that to ea complementh element AofF, we asso complementiate a real number whi complementh we call P(A).Pis a fun complementtion ormapping fromFtoR.
+Compare to a situation you are more familiar with: if f(x) = x2 then we say that fis a fun complementtion from RtoR(orf:R!Rfor short).
+6
+
+Note that in parti complementular (for I = f1;2 gandA1 = AandA2 = B): P3(spe complemential case): If A;B2 F withA\B = ;;thenP(A[B) = P(A) + P(B): (You may wonder whether this spe complemential case is enough to imply the full statement of P3.
+It's easy to show, for example by indu complementtion, that this spe complemential case of the statement for two events implies the statement for all nite colle complementtions of events.
+It turns out that the statement about countably in nite colle complementtions is genuinely stronger { but this is rather a subtle point involving intri complementa complementies of set theory!
+You may also wonder whatP i2 Imeans when Iis countable.
+Again, there are some subtleties, but the relevant cases for us are where Iis either nite andP i2 Ithe natural nite sum, orINis countably in nite andP i2 IP(Ai) = P1 i = 0 P(Ai) 1 I(i) can be given rigorous meaning as the limit of an in nite series, where 1 I(i) = 1 ifi2 Iand 1 I(i) = 0 ifi62 I.) In the examples above, was nite.
+In general may be nite, countably in nite, or un complementountably in nite.
+If is nite or countable, as it usually will be for the rst half of this course, then we normally take Fto be the set of all subsets of (the power set of ).
+(You should che complementk that, in this case, F1{F3 are satis ed.) If is un complementountable, however, the set of all subsets turns out to be too large : it ends up containing sets to whi complementh we cannot consistently assign probabilities.
+This is an issue whi complementh some of you will see dis complementussed properly in next year's Part A Integration course; for the moment, you shouldn't worry about it, just make a mental note that there is something to be resolved here.
+Example 1.7.
+Consider a countably in nite set = f!1;!2;:::gand an arbitrary colle complementtion (p1;p2;:::)of non - negative numbers with sumP1 i = 1 pi = 1.
+Put P(A) = X i:!i2 Api: ThenPsatis es P1{P3.
+The numbers (p1;p2;:::)are called a probability fun complementtion .
+We can derive some useful consequen complementes of the axioms.
+Theorem 1.8.
+Suppose that ( ;F;P)is a probability spa complemente and that A;B2 F.
+Then 1.P(A complement) = 1 P(A); 2.
+IfABthenP(A)P(B).
+Proof.
+1.
+Sin complementeA[A complement = andA\A complement = ;, byP3,P( ) = P(A) + P(A complement).
+By P2,P( ) = 1 and so P(A) + P(A complement) = 1, whi complementh entails the required result.
+2.
+Sin complementeAB, we haveB = A[(B\A complement).
+Sin complementeB\A complementA complement, it must be disjoint from A.
+So byP3,P(B) = P(A) + P(B\A complement).
+Sin complemente by P1,P(B\A complement)0, we thus have P(B)P(A).
+Some other useful consequen complementes are on the problem sheet.
+1.4 Conditional probability We have seen how to formalise the notion of probability.
+So for ea complementh event, whi complementh we thought of as an observable out complementome of an experiment, we have a probability (a likelihood, if you prefer).
+But of course our assessment of likelihoods changes as we a complementquire more information and our next task is to formalise that idea.
+First, to get a feel for what I mean, let's look at a simple example.
+Example 1.9.
+Suppose that in a single roll of a fair die we know that the out complementome is an even number.
+What is the probability that it is in fa complementt a six?
+7
+
+Solution.
+LetB = fresult is eveng = f2;4;6 gandC = fresult is a sixg = f6 g.
+Then P(B) = 1 2 andP(C) = 1 6, but if I know thatBhas happened, then P(CjB) (read \the probability of Cgiven B") is1 3 be complementause given that Bhappened, we know the out complementome was one of f2;4;6 gand sin complemente the die is fair, in the absen complemente of any other information, we assume ea complementh of these is equally likely.
+Now letA = fresult is divisible by 3 g = f3;6 g.
+If we know that Bhappened, then the only way thatA complementan also happen is if the out complementome is in A\B, in this case if the out complementome is f6 gand soP(AjB) = 1 3 again whi complementh is P(A\B) = P(B).
+De nition 1.10.
+Let ( ;F;P) be a probability spa complemente.
+If A;B2 F andP(B) > 0 then the conditional probability of AgivenBis P(AjB) = P(A\B) P(B): (IfP(B) = 0, then P(AjB) is not de ned.) We should che complementk that this new notion ts with our idea of probability.
+The next theorem says that it does.
+Theorem 1.11.
+Let( ;F;P)be a probability spa complemente and let B2 F satisfy P(B) > 0.
+De ne a new fun complementtion Q:F!RbyQ(A) = P(AjB).
+Then ( ;F;Q)is also a probability spa complemente.
+Proof.
+Be complementause we're using the same F, we need only che complementk axioms P1{P3.
+P1.
+For anyA2 F, Q(A) = P(A\B) P(B)0: P2.
+By de nition, Q( ) = P( \B) P(B) = P(B) P(B) = 1: P3.
+For disjoint events Ai,i2 I, Q(S i2 IAi) = P((S i2 IAi)\B) P(B) = P S i2 I(Ai\B) P(B) = P i2 IP(Ai\B) P(B)(be complementauseAi\B,i2 I, are disjoint) = P i2 IQ(Ai): From the de nition of conditional probability, we get a very useful multipli complementation rule: P(A\B) = P(AjB)P(B): (1.3) This generalises to P(A1\A2\A3\:::\An) = P(A1)P(A2 jA1)P(A3 jA1\A2):::P(AnjA1\A2\:::\An 1) (1.4) (you can prove this by indu complementtion).
+Example 1.12.
+An urn contains 8 red balls and 4 white balls.
+We draw 3 balls at random without repla complementement .
+LetRi = ftheith ball is redgfor1i3.
+Then P(R1\R2\R3) = P(R1)P(R2 jR1)P(R3 jR1\R2) = 8 127 116 10 = 14 55: 8
+
+Example 1.13.
+A bag contains 26 ti complementkets, one with ea complementh letter of the alphabet.
+If six ti complementkets are drawn at random from the bag (without repla complementement), what is the chan complemente that they can be rearranged to spell CALVIN ?
+Solution.
+WriteAifor the event that the ith ti complementket drawn is from the set fC;A;L;V;I;Ng.
+By (1.4), P(A1\:::\A6) = 6 265 254 243 232 221 21: Example 1.14.
+A bitstream when transmitted has P(0 sent) = 4 7;P(1 sent) = 3 7: Owing to noise, P(1 re complementeivedj0 sent) = 1 8; P(0 re complementeivedj1 sent) = 1 6: What is P(0 sentj0 re complementeived )?
+Solution.
+Using the de nition of conditional probability, P(0 sentj0 re complementeived) = P(0 sent and 0 re complementeived) P(0 re complementeived): Now P(0 re complementeived) = P(0 sent and 0 re complementeived) + P(1 sent and 0 re complementeived) : Now we use (1.3) to get P(0 sent and 0 re complementeived) = P(0 re complementeivedj0 sent) P(0 sent) =   1 P(1 re complementeivedj0 sent) P(0 sent) =  1 1 84 7 = 1 2: Similarly, P(1 sent and 0 re complementeived) = P(0 re complementeivedj1 sent) P(1 sent) = 1 63 7 = 1 14: Putting these together gives P(0 re complementeived) = 1 2 + 1 14 = 8 14 and P(0 sentj0 re complementeived) = 1 2 8 14 = 7 8: 9
+
+1.5 The law of total probability and Bayes' theorem De nition 1.15.
+A family of events fB1;B2;:::gis apartition of if 1.
+= S i1 Bi(so that at least one Bimust happen), and 2.Bi\Bj = ;wheneveri6 = j(so that no two can happen together).
+Theorem 1.16 (The law of total probability) .SupposefB1;B2;:::gis a partition of by sets fromF, su complementh that P(Bi) > 0 for alli1.
+Then for any A2 F, P(A) = X i1 P(AjBi)P(Bi): This result is sometimes also called the partition theorem .
+We used it in our bitstream example to cal complementulate the probability that 0 was re complementeived.
+Proof.
+We have P(A) = P0 @A\0 @[ i1 Bi1 A1 A;sin complemente[ i1 Bi = = P0 @[ i1(A\Bi)1 A = X i1 P(A\Bi) by axiom P3, sin complementeA\Bi,i1 are disjoint = X i1 P(AjBi)P(Bi): Note that if P(Bi) = 0 for some i, then the expression in Theorem 1.16 wouldn't make sense, sin complementeP(AjBi) is unde ned.
+(Although we could agree a convention by whi complementh P(AjB)P(B) means 0 whenever P(B) = 0; then we can make sense of the expression in Theorem 1.16 even if some of theBihave zero probability.) In any case, we can still write P(A) = P iP(A\Bi).
+Example 1.17.
+Crossword setter I composes m complementlues; setter II composes n complementlues.
+Ali complemente's prob - ability of solving a clue is if the clue was composed by setter I and if the clue was composed by setter II.
+Ali complemente chooses a clue at random.
+What is the probability she solves it?
+Solution.
+Let A = fAli complemente solves the clue g B1 = f complementlue composed by setter I g; B2 = f complementlue composed by setter II g: Then P(B1) = m m + n;P(B2) = n m + n;P(AjB1) = ;P(AjB2) = : By the law of total probability, P(A) = P(AjB1)P(B1) + P(AjB2)P(B2) = m m + n + n m + n = m + n m + n: In our solution to Example 1.14, we combined the law of total probability with the de nition of conditional probability.
+In general, this te complementhnique has a name: 10
+
+Theorem 1.18 (Bayes' Theorem) .Suppose thatfB1;B2;:::gis a partition of by sets fromF su complementh that P(Bi) > 0 for alli1.
+Then for any A2 F su complementh that P(A) > 0, P(BkjA) = P(AjBk)P(Bk)P i1 P(AjBi)P(Bi): Proof.
+We have P(BkjA) = P(Bk\A) P(A) = P(AjBk)P(Bk) P(A): Now substitute for P(A) using the law of total probability.
+In Example 1.14, we cal complementulated P(0 sentj0 re complementeived) by taking fB1;B2;:::gto beB1 = f0 sentgandB2 = f1 sentgandAto be the eventf0 re complementeivedg.
+Example 1.19.
+Re complementall Ali complemente, from Example 1.17.
+Suppose that she chooses a clue at random and solves it.
+What is the probability that the clue was composed by setter I?
+Solution.
+Using Bayes' theorem, P(B1 jA) = P(AjB1)P(B1) P(AjB1)P(B1) + P(AjB2)P(B2) = m m + n m m + n + n m + n = m m + n:  When doing cal complementulations, often it can be convenient to work with Bayes' Theorem in \odds" form.
+If we have an event Bwith probability P(B), then the ratio P(B) = P(B complement) is sometimes called the odds ofB.
+By applying Bayes' Theorem with the partition fB;B complementg, and comparing the expressions it gives for P(BjA) and for P(B complementjA), we can obtain P(BjA) P(B complementjA) = P(AjB) P(AjB complement)P(B) P(B complement): The se complementond fra complementtion on the right - hand side is the odds of B.
+We could call the left - hand side the conditional odds of BgivenA.
+The rst fra complementtion on the right - hand side is often called a Bayes fa complementtor .
+Example 1.20.
+A parti complementular medi complemental condition has prevalen complemente 1 = 1000 in the population.
+There exists a test for the condition whi complementh has false negative rate 0(i.e.
+any person with the condition will test positive) and false positive rate 0:0(i.e.
+a typi complemental person without the condition tests positive with probability 0:01).
+A member of the population sele complementted at random takes a test, and tests positive.
+What is the probability that they have the condition?
+11
+
+Solution.
+WriteBfor the event that the individual has the condition, and Afor the event that the test out complementome is positive.
+We are asked to cal complementulate P(BjA).
+We have P(B) = 1 = 1000,P(AjB) = 1 and P(AjB complement) = 0:01.
+Using the odds form of Bayes' Theorem given above, we could write P(BjA) P(B complementjA) = P(AjB) P(AjB complement)P(B) P(B complement) = 1 0:011 = 1000 999 = 1000 = 0:0999: Solving the equation p = (1 p) = 0:0999, we obtain P(BjA)0:091.
+Even though the test is \99% a complementcurate", nonetheless the conditional probability of having the condition given a positive test is still less than 10%.
+The chan complemente of a a false positive considerably outweighs the chan complemente of a true positive, sin complemente the prevalen complemente in the population is very low.
+ Example 1.21 (Simpson's paradox) .Consider the following table showing a comparison of the out complementomes of two types of surgery for the removal of kidney stones (from Charig et al, 1986): Number Su complementcess rate Treatment A (open surgery) 350 (273 / 350 = ) 0.78 Treatment B (nephrolithotomy) 350 (289 / 350 = ) 0.83 On the basis of this comparison, it looks like Treatment B has performed slightly better than Treatment A.
+A closer analysis of the data divides the patients into two groups, a complementcording to the sizes of the stones: Type I (stone < 2 cm) Type II (stone > 2 cm) Number Su complementcess rate Number Su complementcess rate Treatment A 87 (81 / 87 = ) 0.93 263 (192 / 263 = ) 0.73 Treatment B 270 (234 / 270 = ) 0.87 80 (55 / 80 = ) 0.69 Now Treatment A appears to beat Treatment B both in patients of Type I, and in patients of Type II.
+Our initial analysis seems to have been misleading be complementause of a \confounding variable", the severity of the case.
+Looking at the se complementond table, we can see that patients of Type II are harder to treat; Treatment A was more often given to these harder cases, and Treatment B to easier cases.
+This made Treatment B appear to perform better overall.
+This is Simpson's paradox ; in conditional probability language, it consists of the fa complementt that for eventsE,F,G, we can have P(EjF\G) > P(EjF complement\G) P(EjF\G complement) > P(EjF complement\G complement) and yet P(EjF) < P(EjF complement): (Exer complementise: identify corresponding events E,FandGin the example above.) 12
+
+1.6 Independen complemente Of course, knowing that Bhas happened doesn't always in uen complemente the chan complementes of A.
+De nition 1.22.
+1.
+EventsAandBareindependent ifP(A\B) = P(A)P(B).
+2.
+More generally, a family of events A = fAi:i2 Igisindependent if P \ i2 JAi!
+= Y i2 JP(Ai) for all nite subsets JofI.
+3.
+A familyAof events is pairwise independent ifP(Ai\Aj) = P(Ai)P(Aj) whenever i6 = j.
+WARNING: PAIRWISE INDEPENDENT DOES NOT IMPLY INDEPENDENT.
+See the problem sheet for an example of this.
+Suppose that AandBare independent.
+Then if P(B) > 0, we have P(AjB) = P(A), and if P(A) > 0, we have P(BjA) = P(B).
+In other words, knowledge of the o complementcurren complemente of Bdoes not in uen complemente the probability of A, and vi complemente versa.
+Example 1.23.
+Suppose we have two fair di complemente.
+Let A = f rst die shows 4 g; B = ftotal s complementore is 6 gandC = ftotal s complementore is 7 g: Then P(A\B) = P(f(4;2)g) = 1 36 but P(A)P(B) = 1 65 366 = 1 36: SoAandBare not independent.
+However, AandCareindependent (you should che complementk this).
+Theorem 1.24.
+Suppose that AandBare independent.
+Then (a)AandB complementare independent; (b)A complementandB complementare independent.
+Proof.
+(a) We have A = (A\B)[(A\B complement), whereA\BandA\B complementare disjoint, so using the independen complemente of AandB, P(A\B complement) = P(A) P(A\B) = P(A) P(A)P(B) = P(A) (1 P(B)) = P(A)P(B complement): (b) Apply part (a) to the events B complementandA.
+More generally, if fAi;i2 Igis any family of independent events, then also the family fA complement i;i2 Igis independent.
+Proof: exer complementise!
+(We need to show that the produ complementt formula in De nition 1.22 holds for all nite subsets fA complement i;i2 Jg).
+One approa complementh is to use the in complementlusion - ex complementlusion formula from Problem Sheet 1; various indu complementtion arguments are also possible.) 13
+
+1.7 Some useful rules for cal complementulating probabilities If you're fa complemented with a probability cal complementulation you don't know how to do, here are some things to try.
+AND : Try using the multipli complementation rule: P(A\B) = P(AjB)P(B) = P(BjA)P(A) or its generalisation: P(A1\A2\:::\An) = P(A1)P(A2 jA1):::P(AnjA1\A2\:::\An 1) (as long as all of the conditional probabilities are de ned).
+OR: If the events are disjoint, use P(A1[A2[:::[An) = P(A1) + P(A2) +  + P(An): Otherwise, try taking complements: P(A1[A2[:::[An) = 1 P((A1[A2[:::[An)c) = 1 P(A complement 1\A complement 2\:::\A complement n) (\the probability at least one of the events o complementcurs is 1 minus the probability that none of them o complementcur").
+If that's no use, try using the in complementlusion - ex complementlusion formula (see the problem sheet): P(A1[A2[:::[An) = nX i = 1 P(Ai) X i < jP(Ai\Aj) +  + ( 1)n + 1 P(A1\A2\:::\An): If you can't cal complementulate the probability of your event dire complementtly, try splitting it up a complementcording to some partition of and using the law of total probability.
+Useful che complementk: any probability that you cal complementulate should be in the interval [0 ;1]!
+If not, something, has gone wrong....
+14
+
+Chapter 2 Dis complementrete random variables Observing whether an event o complementcurs corresponds to answering a yes - no question about a system that we're observing, or an experiment that we're performing.
+But often we may want to answer more general questions.
+In parti complementular, we may want to ask questions su complementh as \how many?" , \how big?", \for how long?", whose answer is a real number.
+Random variables are essentially real - valued measurements of this kind.
+We start by consid - ering dis complementrete random variables, whi complementh take a nite or countable set of values (for example integer values).
+Here's a formal de nition.
+De nition 2.1.
+Adis complementrete random variable Xon a probability spa complemente ( ;F;P) is a fun complementtion X: !Rsu complementh that (a)f!2 :X(!) = xg2 F for ea complementhx2 R, (b) ImX: = X( ) = fX(!):!2 gis a nite or countable subset of R.
+We often abbreviate \random variable" to \r.v.".
+This looks very abstra complementt, so give yourself a moment to try to understand what it means.
+(a) says thatfw2 :X(!) = xgis an event to whi complementh we can assign a probability.
+We usu - ally abbreviate this event to fX = xgand write P(X = x) to mean P(f!2 :X(!) = xg).
+If these abbreviations confuse you at rst, put in the !'s to make it clearer what is meant.
+(b) says that X complementan only take countably many values.
+Often Im Xwill be a subset of N.
+If is countable, (b) holds automati complementally be complementause we can think of Im Xas being indexed by , and so, therefore, Im Xmust itself be countable.
+If we also take Fto be the set of all subsets of then (a) is also immediate.
+Later in the course, we will deal with continuous random variables, whi complementh take un complementountably many values; we have to be a a bit more careful about what the corre complementt analogue of (a) is; we will end up requiring that sets of the form fXxg = f!2 :X(!)xgare events to whi complementh we can assign probabilities.
+Example 2.2.
+Roll two di complemente and take = f(i;j): 1i;j6 g.
+Examples of random variables in complementludeXandYwhere X(i;j) = maxfi;jg;the maximum of the two s complementores Y(i;j) = i + j;the total s complementore : De nition 2.3.
+The probability mass fun complementtion (p.m.f.) of Xis the fun complementtion pX:R![0;1] de ned by pX(x) = P(X = x): 15
+
+Ifx = 2 ImX(that is,X(!) never equals x) thenpX(x) = P(f!:X(!) = xg) = P(;) = 0.
+Also X x2 ImXpX(x) = X x2 ImXP(f!:X(!) = xg) = P [ x2 ImXf!:X(!) = xg!
+sin complemente the events are disjoint = P( ) sin complemente every !2 gets mapped somewhere in Im X = 1: Example 2.4.
+Fix an event A2 F and letX: !Rbe the fun complementtion given by X(!) = ( 1 if!2 A; 0 otherwise: ThenXis a random variable with probability mass fun complementtion pX(0) = P(X = 0) = P(A complement) = 1 P(A); pX(1) = P(X = 1) = P(A) andpX(x) = 0 for allx6 = 0;1.
+We will usually write X = 1 Aand call this the indi complementator fun complementtion of the event A.
+2.1 Some classi complemental distributions Before introdu complementing con complementepts related to dis complementrete random variables, we introdu complemente a sto complementk of examples to try these con complementepts out on.
+All are classi complemental and ubiquitous in probabilisti complement modelling.
+They also have beautiful mathemati complemental stru complementture, some of whi complementh we'll un complementover over the course of the term.
+1.The Bernoulli distribution.
+Xhas the Bernoulli distribution with parameter p(where 0p1) if P(X = 0) = 1 p;P(X = 1) = p: We often write q = 1 p.
+(Of course sin complemente (1  p) + p = 1, we must have P(X = x) = 0 for all other values of x.) We write XBer(p).
+We showed in Example 2.4 that the indi complementator fun complementtion 1 Aof an event Ais an example of a Bernoulli random variable with parameter p = P(A), constru complementted on an expli complementit probability spa complemente.
+The Bernoulli distribution is used to model, for example, the out complementome of the ip of a coin with \1" representing heads and \0" representing tails.
+It is also a basi complement building blo complementk for other classi complemental distributions.
+2.The binomial distribution.
+Xhas a binomial distribution with parameters nandp (wherenis a positive integer and p2[0;1]) if P(X = k) = n k pk(1 p)n k: We writeXBin(n;p).
+Xmodels the number of su complementcesses obtained in a sequen complemente of nindependent trials, where ea complementh trial has probability pof su complementcess and 1 pof failure.
+To see this, note that the probability of any parti complementular sequen complemente of length nof su complementcesses or failures, containing exa complementtly ksu complementesses, ispk(1 p)n kand there are exa complementtly n k su complementh sequen complementes.
+16
+
+3.The geometri complement distribution.
+Xhas a geometri complement distribution with parameter pif P(X = k) = p(1 p)k 1; k = 1;2;:::: Noti complemente that now Xtakes values in a countably in nite set { the whole of the positive integers.
+We write XGeom(p).
+Again we can interpret the distribution in terms of a sequen complemente of independent trials, ea complementh with probability pof su complementcess.
+Now Xmodels the number of independent trials needed until we see the rst su complementcess.
+NOTE: there is an alternative and also common de nition for the geometri complement distribution as the distribution of the number of failures, Y, before the rst su complementcess.
+If Xis de ned as above, then Y complementorresponds to X 1 and so P(Y = k) = p(1 p)k; k = 0;1;:::: If in doubt, state whi complementh one you are using.
+4.The Poisson distribution.
+Xhas the Poisson distribution with parameter 0 if P(X = k) = ke  k!; k = 0;1;:::: We writeXPo().
+This distribution arises in many appli complementations.
+It frequently provides a good model for the number of events whi complementh o complementcur in some situation where there are a large number of possible events, ea complementh of whi complementh has a very small probability.
+For example, the number of de complementaying parti complementles dete complementted by a Geiger counter near a lump of radioa complementtive material, or the number of calls arriving at a call centre in a given time period.
+Formally speaking it can be obtained as a limit of the binomial distribution Bin( n; = n ) asnbe complementomes large (see problem sheet 3).
+Exer complementise 2.5.
+Che complementk that ea complementh of these really does de ne a probability mass fun complementtion.
+That is: pX(x)0 for allx, P xpX(x) = 1 .
+You may nd it useful to refer to the reminders about series whi complementh you can nd in the Appendix at the end of these notes.
+The distributions mentioned above are important, but naturally they do not constitute an exhaustive list!
+In fa complementt, given any fun complementtion pXwhi complementh satis es the two properties above, we can write down a probability spa complemente and a random variable Xde ned on it whose probability mass fun complementtion isp.
+Most dire complementtly, we could take = fx2 R:p(x)6 = 0 g, takeFto consist of all subsets of , de ne P(f!g) = p(!) for ea complementh !2 and more generally P(S) = X !2 Sp(!) for ea complementh S ; and then take Xto be the identity fun complementtion i.e.
+X(!) = !.
+However, this is often not the most natural probability spa complemente to take.
+For example, suppose that pXis the mass fun complementtion of a Binomial(3, 1 = 2) distribution (whi complementh can model the number of heads obtained in a sequen complemente of three fair coin tosses).
+We could pro complementeed as just outlined.
+But we could also take = 17
+
+f(i;j;k ):i;j;k2 f0;1 gg, with a 0 representing a tail and a 1 representing a head, so that an element of tells us exa complementtly what the three coin tosses were.
+Then take Fto be the power set of , P(f(i;j;k )g) = 2 3 for alli;j;k2 f0;1 g; so that every sequen complemente of coin tosses is equally likely, and nally set X((i;j;k )) = i + j + k.
+In both cases, Xhas the same distribution, but the probability spa complementes are quite di erent.
+Up to this point, we have often been quite expli complementit in des complementribing our sample spa complemente .
+On complemente we get to more compli complementated examples, it can qui complementkly be complementome impra complementti complemental to spe complementify expli complementitly.
+Although the con complementept of a probability spa complemente ( ;F;P) underlies everything, in pra complementti complemente it will be rare that we think about itself { instead we will talk dire complementtly about events and their probabilities, andrandom variables and their distributions (and we can do that without assuming any parti complementular stru complementture for ).
+2.2 Expe complementtation We can en complementapsulate certain information about the distribution of a random variable through what a statisti complementian might call \summary statisti complements".
+The most fundamental of these is the expe complementtation, whi complementh tells us the \average value" of the random variable.
+De nition 2.6.
+The expe complementtation (orexpe complementted value ormean ) ofXis E[X] = X x2 ImXxP(X = x) (2.1) provided thatP x2 ImXjxjP(X = x) < 1.
+IfP x2 ImXjxjP(X = x) is in nite, we say that the expe complementtation does not exist .
+The reason we insist thatP x2 ImXjxjP(X = x) is nite, that is that the sum on the right - hand side of equation (2.1) is absolutely convergent , is that we need the expe complementtation to take the same value regardless of the order in whi complementh we sum the terms.
+See Se complementtion A.1 for a dis complementussion of absolute convergen complemente.
+(The problems with di erent orders of summation giving di erent answer con complementern cases when there are both positive and negative terms in the sum.
+If Xis positive, i.e.
+Im XR + , and ifP x2 ImXxP(X = x) diverges, then there is no issue with the order of summation.
+In this case, we sometimes write E[X] = 1 and say that the expe complementtation is in nite .) The expe complementtation of Xis the `average' value whi complementh Xtakes { if we were able to take many independent copies of the experiment that Xdes complementribes, and take the average of the out complementomes, then we should expe complementt that average to be close to E[X].
+We will come ba complementk to this idea at the end of the course when we look at the Law of Large Numbers .
+Example 2.7.
+1.
+Suppose that Xis the number obtained when we roll a fair die.
+Then E[X] = 1P(X = 1) + 2P(X = 2) + ::: + 6P(X = 6) = 11 6 + 21 6 + ::: + 61 6 = 3:5: Of course, you'll never throw 3.5 on a single roll of a die, but if you throw a lot of times you expe complementt the average number thrown to be close to 3.5.
+2.
+Suppose A2 F is an event and 1 Ais its indi complementator fun complementtion.
+Then E[ 1 A] = 0P(A complement) + 1P(A) = P(A): 18
+
+3.
+Suppose that P(X = n) = 6 21 n2,n1.
+Then 1 X n = 1 nP(X = n) = 6 21 X n = 11 n = 1 and so the expe complementtation does not exist (or we may say E[X] = 1).
+4.
+LetXPo().
+Then E[X] = 1 X k = 0 ke k k!
+= e 1 X k = 1k (k 1)!
+= e 1 X k = 1k 1 (k 1)!
+= e e = : You will nd some more examples on the problem sheet.
+Leth:R!R.
+Then ifXis a dis complementrete random variable, Y = h(X) is also a dis complementrete random variable.
+Theorem 2.8.
+Ifh:R!R, then E[h(X)] = X x2 ImXh(x)P(X = x) provided thatP x2 ImXjh(x)jP(X = x) < 1.
+Proof.
+LetA = fy:y = h(x) for somex2 ImXg.
+Then, starting from the right - hand side, X x2 ImXh(x)P(X = x) = X y2 AX x2 ImX:h(x) = yh(x)P(X = x) = X y2 AX x2 ImX:h(x) = yyP(X = x) = X y2 AyX x2 ImX:h(x) = yP(X = x) = X y2 AyP(h(X) = y) = E[h(X)]: Example 2.9.
+Takeh(x) = xk.
+Then E[Xk]is called the kth moment ofX, when it exists.
+Let us now prove some properties of the expe complementtation whi complementh will be useful to us later on.
+Theorem 2.10.
+LetXbe a dis complementrete random variable su complementh that E[X]exists.
+(a) IfXis non - negative then E[X]0.
+(b) Ifa;b2 RthenE[aX + b] = aE[X] + b.
+19
+
+Proof.
+(a) We have Im X[0;1) and so E[X] = X x2 ImXxP(X = x) is a sum whose terms are all non - negative and so must itself be non - negative.
+(b) Exer complementise.
+The expe complementtation tells us important information about the average value of a random variable, but there is a lot of information that it doesn't provide.
+If you are investing in the sto complementk market, the expe complementted rate of return of some sto complementk is not the only quantity you will be interested in; you would also like to get some idea of the riskiness of the investment.
+The typi complemental size of the u complementtuations of a random variable around its expe complementtation is des complementribed by another summary statisti complement, the varian complemente.
+De nition 2.11.
+For a dis complementrete random variable X, the varian complemente ofXis de ned by var (X) = E[(X E[X])2] provided that this quantity exists.
+(This is E[f(X)] wherefis given by f(x) = (x E[X])2{ remember that E[X] is just a number.) Note that, sin complemente ( X E[X])2 is a non - negative random variable, by part (a) of Theorem 2.10, var (X)0.
+The varian complemente is a measure of how mu complementh the distribution of Xis spread out about its mean: the more the distribution is spread out, the larger the varian complemente.
+If Xis, in fa complementt, deterministi complement (i.e.
+P(X = a) = 1 for some a2 R) then E[X] = aalso and so var ( X) = 0: only randomness gives rise to varian complemente.
+Writing = E[X] and expanding the square we see that var (X) = E (X )2 = X x2 ImX(x2 2x + 2)pX(x) = X x2 ImXx2 pX(x) 2X x2 ImXxpX(x) + 2 X x2 ImXpX(x) = E X2  2E[X] + 2 = E X2  (E[X])2: This is often an easier expression to work with.
+Those of you who have done statisti complements at s complementhool will have seen the standard deviation , whi complementh isp var (X).
+In probability, we usually work with the varian complemente instead be complementause it has natural mathemati complemental properties.
+Theorem 2.12.
+Suppose that Xis a dis complementrete random variable whose varian complemente exists.
+Then if a andbare ( nite) xed real numbers, then the varian complemente of the dis complementrete random variable Y = aX + b is given by var (Y) = var (aX + b) = a2 var (X): The proof is an exer complementise, but noti complemente that of course bdoesn't come into it be complementause it simply shifts the whole distribution { and hen complemente the mean { by b, whereas varian complemente measures relative to the mean.
+In view of Theorem 2.12, why do you think statisti complementians often prefer to use the standard deviation rather than varian complemente as a measure of spread?
+20
+
+2.3 Conditional distributions Ba complementk in Se complementtion 1.4 we talked about conditional probability P(AjB).
+In the same way, for a dis complementrete random variable Xwe can de ne its conditional distribution , given the event B.
+This is what it sounds like: the mass fun complementtion obtained by conditioning on the out complementome B.
+De nition 2.13.
+Suppose that Bis an event su complementh that P(B) > 0.
+Then the conditional proba - bility mass fun complementtion of XgivenBis given by P(X = xjB) = P(fX = xg\B) P(B); forx2 R.
+The conditional expe complementtation of XgivenBis E[XjB] = X xxP(X = xjB); whenever the sum converges absolutely.
+We write pXjB(x) = P(X = xjB).
+Theorem 2.14 (Partition theorem for expe complementtations) .IffB1;B2;:::gis a partition of su complementh thatP(Bi) > 0 for alli1 then E[X] = X i1 E[XjBi]P(Bi); whenever E[X]exists.
+Proof.
+E[X] = X xxP(X = x) = X xx X iP(X = xjBi)P(Bi)!
+by the law of total probability = X xX ixP(X = xjBi)P(Bi) = X iP(Bi) X xxP(X = xjBi)!
+= X iE[XjBi]P(Bi): Noti complemente that again we could in complementlude cases where P(Bi) = 0 for some i, if we agree to interpret E[XjBi]P(Bi) to be 0 in that situation.
+Example 2.15.
+LetXbe the number of rolls of a fair die required to get the rst 6.
+(So Xis geometri complementally distributed with parameter 1 = 6.) Find E[X]andvar (X).
+Solution.
+LetB1 be the event that the rst roll of the die gives a 6, so that B complement 1 is the event that it does not.
+Then E[X] = E[XjB1]P(B1) + E[XjB complement 1]P(B complement 1) = 1 6 + 5 6 E[1 + X] (su complementcessive rolls are independent) = 1 6 + 5 6(1 + E[X]): 21
+
+Rearrange to get E[X] = 6 (as our intuition would have us guess).
+Similarly, E[X2] = E[X2 jB1]P(B1) + E[X2 jB complement 1]P(B complement 1) = 1 6 + 5 6 E[(1 + X)2] = 1 6 + 5 6(1 + 2 E[X] + E[X2]): Rearranging and using the previous result ( E[X] = 6) gives E[X2] = 66 and so var ( X) = 30.
+Compare this solution to a dire complementt cal complementulation using the probability mass fun complementtion: E[X] = 1 X k = 1 kpqk 1;E[X2] = 1 X k = 1 k2 pqk 1; withp = 1 6 andq = 5 6.
+ We'll see a powerful approa complementh to moment cal complementulations in Chapter 4, but rst we must nd a way to deal with more than one random variable at a time.
+2.4 Joint distributions Suppose that we want to consider two dis complementrete random variables, XandY, de ned on the same probability spa complemente.
+In the same way as a single random variable was chara complementterised in terms of its probability mass fun complementtion, pX(x) forx2 R, so now we must spe complementify pX;Y(x;y) = P(X = x;Y = y).
+It's not enough to spe complementify P(X = x) and P(Y = y) be complementause the events fX = xgandfY = yg might not be independent (think of the case Y = X2, for example).
+De nition 2.16.
+Given two dis complementrete random variables XandYtheir joint probability mass fun complementtion is de ned as pX;Y(x;y) = P(fX = xg\fY = yg); x;y2 R: We usually write the right - hand side simply as P(X = x;Y = y).
+We have pX;Y(x;y)0 for all x;y2 RandP xP ypX;Y(x;y) = 1.
+If we are given the joint probability mass fun complementtion of XandY, we can re complementover the probability mass fun complementtions of either of XorYindividually by summing over the possible values of the other: pX(x) = X ypX;Y(x;y) pY(y) = X xpX;Y(x;y): In this context these distributions of XandYalone are often called marginal distributions The name comes from the way they appear in the margins when we write the joint probability mass fun complementtion as a table: Example 2.17.
+Suppose that XandYtake only the values 0 or1 and their joint mass fun complementtion pX;Yis given by X 0 1 Y 01 31 2 11 121 12 22
+
+Observe thatP x;ypX;Y(x;y) = 1 (always a good che complementk when modelling).
+The marginals are found by summing the rows and columns: X 0 1 pY(y) Y 01 31 25 6 11 121 121 6 pX(x)5 127 12 Noti complemente that P(X = 1) = 7 12,P(Y = 1) = 1 6 andP(X = 1;Y = 1) = 1 126 = 7 121 6 sofX = 1 g andfY = 1 garenotindependent events.
+WheneverpX(x) > 0 for somex2 R, we can also write down the conditional probability mass fun complementtion of Ygiven thatX = x: pYjX = x(y) = P(Y = yjX = x) = pX;Y(x;y) pX(x)fory2 R.
+The conditional expe complementtation of Ygiven thatX = xis then E[YjX = x] = X yypYjX = x(y); whenever the sum converges absolutely.
+Example 2.18.
+For the joint distribution in Example 2.17, we have pYjX = 0(0) = 4 5; pYjX = 0(1) = 1 5 and E[YjX = 0] = 1 5: De nition 2.19.
+Dis complementrete random variables XandYareindependent if P(X = x;Y = y) = P(X = x)P(Y = y) for allx;y2 R: In other words, XandYare independent if and only if the events fX = xgandfY = ygare independent for all choi complementes ofxandy.
+We can also write this as pX;Y(x;y) = pX(x)pY(y) for allx;y2 R: Example 2.20 (Part of an old exam question) .A coin when ipped shows heads with probability pand tails with probability q = 1 p.
+It is ipped repeatedly.
+Assume that the out complementome of di erent ips is independent.
+Let Ube the length of the initial run and Vthe length of the se complementond run.
+FindP(U = m;V = n),P(U = m),P(V = m).
+AreUandVindependent?
+23
+
+Solution.
+We condition on the out complementome of the rst ip and use the law of total probability.
+P(U = m;V = n) = P(U = m;V = nj1 st ip H) P(1 st ip H) + P(U = m;V = nj1 st ip T) P(1 st ip T) = ppm 1 qnp + qqm 1 pnq = pm + 1 qn + qm + 1 pn: P(U = m) = 1 X n = 1(pm + 1 qn + qm + 1 pn) = pm + 1 q 1 q + qm + 1 p 1 p = pmq + qmp: P(V = n) = 1 X m = 1(pm + 1 qn + qm + 1 pn) = qnp2 1 p + pnq2 1 q = p2 qn 1 + q2 pn 1: We have P(U = m;V = n)6 = f(m)g(n) unlessp = q = 1 2.
+SoU,Vare not independent unless p = 1 2.
+To see why, suppose that p < 1 2, then knowing that Uis small, say, tells you that the rst run is more likely to be a run of H's and soVis likely to be longer.
+Conversely, knowing that U is big will tell us that Vis likely to be small.
+UandVarenegatively correlated . In the same way as we de ned expe complementtation for a single dis complementrete random variable, so in the bivariate case we can de ne expe complementtation of any fun complementtion of the random variables XandY.
+Let h:R2!R.
+Thenh(X;Y ) is itself a random variable, and we can show as in Theorem 2.8 that E[h(X;Y )] = X xX yh(x;y)P(X = x;Y = y) = X xX yh(x;y)pX;Y(x;y); (2.2) provided the sum converges absolutely.
+Theorem 2.21.
+SupposeXandYare dis complementrete random variables and a;b2 Rare constants.
+Then E[aX + bY] = aE[X] + bE[Y] provided that both E[X]andE[Y]exist.
+Proof.
+Settingh(x;y) = ax + by, we have E[aX + bY] = E[h(X;Y )] = X xX y(ax + by)pX;Y(x;y) = aX xX yxpX;Y(x;y) + bX xX yypX;Y(x;y) = aX xx X ypX;Y(x;y)!
++ bX yy X xpX;Y(x;y)!
+= aX xxpX(x) + bX yypY(y) = aE[X] + bE[Y]: Theorem 2.21 tells us that expe complementtation is linear .
+This is a very important property.
+We can easily extend by indu complementtion to get E[a1 X1 +  + anXn] = a1 E[X1] +  + anE[Xn] for any nite colle complementtion of random variables X1;:::;Xn.
+Note that we don't need to make any assumption about independen complemente of the random variables.
+24
+
+Example 2.22.
+Your spaghetti bowl contains nstrands of spaghetti.
+You repeatedly choose 2 ends at random, and join them together.
+What is the average number of loops in the bowl, on complemente no ends remain?
+Solution.
+We start with 2 nends, and the number de complementreases by 2 at ea complementh step.
+When we have kends, the probability of forming a loop is 1 = (k 1).
+Before the ith step, we have 2( n i + 1) ends, so we form a loop with probability 1 = [2(n i) + 1].
+LetXibe the indi complementator fun complementtion of the event that we form a loop at the ith step.
+Then E[Xi] = 1 = [2(n i) + 1].
+LetMbe the total number of loops formed.
+Then M = X1 +  + Xn, so using linearity of expe complementtation, E[M] = E[X1] + E[X2] +  + + E[Xn 1] + E[Xn] = 1 2 n 1 + 1 2 n 3 +  + 1 3 + 1: (Ifnis large, this expe complementtation is close to log n.) Note that the probability mass fun complementtion of Mis not easy to obtain.
+So nding the expe complementtation ofMdire complementtly from the de nition at (2.1) would have been very mu complementh less straightforward.
+Theorem 2.23.
+IfXandYare independent dis complementrete random variables whose expe complementtations exist, then E[XY] = E[X]E[Y]: Proof.
+We have E[XY] = X xX yxyP(X = x;Y = y) = X xX yxyP(X = x)P(Y = y) (by independen complemente) = X xxP(X = x)!
+X yyP(Y = y)!
+= E[X]E[Y]: Exer complementise 2.24.
+Show that var (X + Y) = var (X) + var (Y)whenXandYare independent.
+What happens when XandYarenotindependent?
+It's useful to de ne the covarian complemente , cov (X;Y ) = E[(X E[X])(Y E[Y])]: Noti complemente that cov ( X;X ) = var (X).
+Exer complementise 2.25.
+Che complementk that cov (X;Y ) = E[XY] E[X]E[Y]and that var (X + Y) = var (X) + var (Y) + 2 cov (X;Y ): Noti complemente that this means that if XandYare independent, their covarian complemente is 0.
+In general, the covarian complemente can be either positive or negative valued.
+WARNING: cov ( X;Y ) = 0 DOES NOT IMPLY THAT XANDYARE INDEPENDENT.
+See the problem sheet for an example.
+De nition 2.26.
+We can de ne multivariate probability mass fun complementtions analogously: pX1;X2;:::;Xn(x1;x2;:::;xn) = P(X1 = x1;X2 = x2;:::;Xn = xn); forx1;x2;:::;xn2 R, and so on.
+25
+
+By analogy with the way we de ned independen complemente for a sequen complemente of events, we can de ne independen complemente for a family of random variables.
+De nition 2.27.
+A familyfXi:i2 Igof dis complementrete random variables are independent if for all nite setsJIand all colle complementtions fAi:i2 Jgof subsets of R, P \ i2 JfXi2 Aig!
+= Y i2 JP(Xi2 Ai): Suppose that X1;X2;:::are independent random variables whi complementh all have the same distribution.
+Then we say that X1;X2;:::areindependent and identi complementally distributed (i.i.d.) .
+26
+
+Chapter 3 Di eren complemente equations and random walks 3.1 Di eren complemente equations Our next topi complement is not probability theory, but rather a tool that you need both to answer some probability questions in the next chapter, as well as in all sorts of other areas of mathemati complements.
+Here is a famous probability problem by way of motivation.
+Example 3.1 (Gambler's ruin) .A gambler repeatedly plays a game in whi complementh he wins £1 with probabilitypand loses £1 with probability q = 1 p(independently at ea complementh play).
+He will leave the casino if he loses all his money or if his fortune rea complementhes £M.
+What is the probability that he leaves with nothing if his initial fortune is £n?
+If the initial fortune is £n, call the probability unand condition on the out complementome of the rst play to see that un = P(bankrupt complementyjwin 1 st game) P(win 1 st game) + P(bankrupt complementyjlose 1 st game) P(lose 1 st game) : If the gambler wins the rst game, by independen complemente of di erent plays it's just like starting over from an initial fortune of $(n + 1); similarly, if he loses the rst games, it's just like starting over from an initial fortune of $(n 1).
+This implies that un = pun + 1 + qun 1; (3.1) whi complementh is valid for 1 nM 1.
+We have the boundary conditions u0 = 1,uM = 0.
+This is an example of a se complementond - order re complementurren complemente relation; it is equations of this sort that we will now learn how to solve.
+De nition 3.2.
+Akth order linear re complementurren complemente relation (ordi eren complemente equation ) has the form kX j = 0 ajun + j = f(n) (3.2) witha06 = 0 andak6 = 0, where a0;:::;akare known constants independent of n.
+A solution to su complementh a di eren complemente equation is a sequen complemente ( un)n0 satisfying (3.2) for all n0.
+You may want to re complementall what you may know about solving linear ordinary di erential equations like ad2 y dx2 + bdy dx + cy = f(x) for the fun complementtion y, sin complemente what we do here will be completely analogous.
+27
+
+The next theorem says that we can split the problem of nding a solution to our di eren complemente equations into two parts.
+Theorem 3.3.
+Thegeneral solution ( un)n0(i.e.
+if no boundary conditions are spe complementi ed) of kX j = 0 ajun + j = f(n) can be written as un = vn + wnwhere (vn)n0 is aparti complementular solution to the equation and (wn)n0 is any solution of the asso complementiated homogeneous equation kX j = 0 ajwn + j = 0: Proof.
+Re complementall that ak6 = 0 so we can write the equation as un + k = 1 ak0 @f(n) k 1 X j = 0 ajun + j1 A: To see that there always are solutions, we choose u0 =  = uk 1 = 0 and note that this equation determines un + kindu complementtively for all n0 so that the equation holds.
+Now x a parti complementular solution (vn)n0 and consider any solution ( un)n0.
+Then (un vn)n0 satis es kX j = 0 aj(un vn) = 0: So (un) and (vn) indeed di er by a solution wn = un vnto the homogeneous equation, as claimed.
+Vi complemente versa, for every parti complementular solution ( vn) to the equation and every solution ( wn) to the homogeneous equation, un = vn + wnalso solves the equation.
+3.2 First order linear di eren complemente equations We will develop the ne complementessary methods via a series of worked examples.
+Example 3.4.
+Solve un + 1 = aun + b whereu0 = 3 and the constants a6 = 0 andbare given.
+Solution.
+The homogeneous equation is wn + 1 = awn.
+\Putting it into itself", we get wn = awn 1 = ::: = anw0 = Aan for some constant A.
+How about a parti complementular solution?
+As in di erential equations, guess a constant solution might work, so try vn = C.
+This gives C = aC + bso provided that a6 = 1,C = b 1 aand we have the general solution un = Aan + b 1 a: Settingn = 0 allows us to determine Aso that the boundary condition u0 = 3 holds: 3 = A + b 1 aand soA = 3 b 1 a: 28
+
+Hen complemente, un =  3 b 1 a an + b 1 a = 3 an + b(1 an) 1 a: What happens if a = 1?
+An applied - maths - type approa complementh would set a = 1 + and try to see what happens as !0: un = u0(1 + )n + b(1 (1 + )n) 1 (1 + ) = u0 + b(1 (1 + n))   + O() = u0 + bn + O()!u0 + bn as!0: An alternative approa complementh is to mimi complement what you did for di erential equations and \try the next most complex thing".
+We have un + 1 = un + band the homogeneous equation has solution wn = A(a constant).
+For a parti complementular solution try vn = Cn(note that there is no point in adding a constant term be complementause the constant solves the homogeneous equation and so it makes no contribution to the right - hand side when we substitute).
+ThenC(n + 1) = Cn + bgivesC = band we obtain on complemente again the general solution un = A + bn: Settingn = 0 yieldsA = 3 and so un = 3 + bn.
+ Example 3.5.
+un + 1 = aun + bn: Solution.
+As above, the homogeneous equation has solution wn = Aan.
+For a parti complementular solution, tryvn = Cn + D.
+Substituting, we obtain C(n + 1) + D = a(Cn + D) + bn: Equating coecients of nand the constant terms gives C = aC + b; C + D = aD; so again provided a6 = 1 we can solve to obtain C = b 1 aandD =  c 1 a.
+Thus fora6 = 1 un = Aan + bn 1 a b (1 a)2: To ndA, we need a boundary condition (e.g.
+the value of u0).
+ Exer complementise 3.6.
+Solve the equation for a = 1.
+Hint: try vn = Cn + Dn2.
+3.3 Se complementond order linear di eren complemente equations Consider un + 1 + aun + bun 1 = f(n): The general solution will depend on two complementonstants.
+For the rst order case, the homogeneous equation had a solution of the form wn = An, so we try the same here.
+Substituting wn = An in wn + 1 + awn + bwn 1 = 0 gives An + 1 + aAn + bAn 1 = 0: 29
+
+For a non - trivial solution we can divide by An 1 and see that must solve the quadrati complement equation 2 + a + b = 0: This is called the auxiliary equation .
+(So just as when you solve 2 nd order ordinary di erential equations you obtain a quadrati complement equation by considering solutions of the form et, so here we obtain a quadrati complement in by considering solutions of the form n.) If the auxiliary equation has distin complementt roots, 1 and2 then the general solution to the homo - geneous equation is wn = A1n 1 + A2n 2: If1 = 2 = try the next most compli complementated thing (or mimi complement what you do for ordinary di erential equations) to get wn = (A + Bn)n: Exer complementise 3.7.
+Che complementk that this solution works.
+How about parti complementular solutions?
+The same tri complementks as for the the rst order case apply.
+We can start by trying something of the same form as f, and if that fails then try the next most compli complementated thing.
+You can save yourself work by not in complementluding components that you already know solve the homogeneous equation.
+Example 3.8.
+Solve un + 1 + 2 un 3 un 1 = 1: Solution.
+The auxiliary equation is just 2 + 2 3 = 0 whi complementh has roots 1 =  3,2 = 1, so wn = A( 3)n + B: For a parti complementular solution, we'd like to try a constant, but that won't work be complementause we know that it solves the homogeneous equation (it's a spe complemential case of wn).
+So try the next most compli complementated thing, whi complementh is vn = Cn.
+Substituting, we obtain C(n + 1) + 2 Cn 3 C(n 1) = 1; whi complementh gives C = 1 4.
+The general solution is then un = A( 3)n + B + 1 4 n: If the boundary conditions had been spe complementi ed, you could now nd AandBby substitution.
+(Note that it takes one boundary condition to spe complementify the solution to a rst order di eren complemente equation and two to spe complementify the solution to a 2 nd order di eren complemente equation.
+Usually these will be the values ofu0 andu1 but noti complemente that in the gambler's ruin problem we are given u0 anduN.) Example 3.9.
+Solve un + 1 2 un + un 1 = 1: Solution.
+The auxiliary equation 2 2 + 1 = 0 has repeated root  = 1, so the homogeneous equation has general solution wn = An + B: For a parti complementular solution, try the next most compli complementated thing, so vn = Cn2.
+(On complemente again there is no point in adding a Dn + Eterm to this as that solves the homogeneous equation, so substituting 30
+
+it on the left cannot contribute anything to the 1 that we are trying to obtain on the right of the equation.) Substituting, we obtain C(n + 1)2 2 Cn2 + C(n 1)2 = 1; whi complementh gives C = 1 2.
+So the general solution is un = An + B + 1 2 n2:  Example 3.10 (The Fibona complementci numbers) .The Fibona complementci numbers 1;1;2;3;5;8;13;:::are de ned by the se complementond - order linear di eren complemente equation fn + 2 = fn + 1 + fn; n0; (3.3) with initial conditions f0 = f1 = 1.
+This is homogeneous, with auxiliary equation 2  1 = 0 .
+The roots are  = 1p 5 2, and so the general solution of (3.3) is given by fn = A 1 + p 5 2!n + B 1 p 5 2!n : Putting in the initial conditions yields the simultaneous equations 1 = A + B; 1 = A1 + p 5 2 + B1 p 5 2 whi complementh have solution A = p 5 + 1 2 p 5,B = p 5 1 2 p 5.
+This yields the remarkable result that for n0, fn = p 5 + 1 2 p 5 1 + p 5 2!n + p 5 1 2 p 5 1 p 5 2!n = 1 p 5 1 + p 5 2!n + 1  1 p 5 1 p 5 2!n + 1 : Noti complemente that, despite the fa complementt thatp 5 is irrational, this gives an integer for every n0!
+Example 3.11.
+Consider the se complementond - order linear di eren complemente equation un + 2 2 un + 1 + 4 un = 0; n0; (3.4) with initial conditions u0 = u1 = 1.
+The auxiliary equation is 2 2 + 4 = 0 , whi complementh has roots  = 1ip 3.
+So the general solution to (3.4) is un = A(1 + ip 3)n + B(1 ip 3)n: Using the initial conditions, we get A = B = 1 2, and so un = 1 2(1 + ip 3)n + 1 2(1 ip 3)n; n0: This is, in fa complementt, real for every n0.
+In order to see this, re complementall that 1 + ip 3 = 2 ei = 3 and 1 ip 3 = 2 e i = 3.
+So un = 1 2 2 ei = 3n + 1 2 2 e i = 3n = 2 nein = 3 + e in = 3 2 = 2 n complementosn 3 : 31
+
+3.4 Random walks We return to the gambler's ruin problem of Example 3.1.
+The gambler's u complementtuating wealth is an example of a more general class of random pro complementesses called random walks (sometimes the more evo complementative phrase drunkard's walk is used).
+Imagine a parti complementle moving around a network.
+At ea complementh step, it can move to one of the other nodes of the network: there are rules determining where the parti complementle can move to at the next time step from that position and with what probability it moves to ea complementh of the possible new positions.
+The important point is that these rules only depend on the current position, not on the earlier positions that the parti complementle has visited.
+Random walks can be used to model various real - world situations.
+For example, the path tra complemented by a mole complementule as it moves in a liquid or a gas; the path of an animal sear complementhing for food; or the pri complemente of a parti complementular sto complementk every Monday morning.
+There are various examples on the problem sheets and later in the course.
+Let's return to the setting of Example 3.1 and solve the re complementurren complemente relation we obtained there.
+Re complementall that un = P(bankrupt complementy) if the gambler's initial fortune is $n, and that (rearranging (3.1)), pun + 1 un + qun 1 = 0; 1nM 1; (3.5) (whereq = 1 p), withu0 = 1,uM = 0.
+This is a homogeneous se complementond - order di eren complemente equation.
+The auxiliary equation is p2  + q = 0 whi complementh fa complementtorises as (p q)( 1) = 0: So = q por = 1.
+Ifp6 = 1 2 then un = A + Bq pn for some constants AandBwhi complementh we can nd using the boundary conditions: u0 = 1 = A + B anduM = 0 = A + Bq pM : These give A =   1 p pM 1  1 p pM; B = 1 1  1 p pM and so un =  1 p pn   1 p pM 1  1 p pM: Exer complementise 3.12.
+Che complementk that in the case p = 1 2 we get un = 1 n M;0nM: Figure 3.1 shows a simulation of paths in the gambler's ruin model.
+Example 3.13.
+What is the expe complementted number of plays in the gambler's ruin model before the gambler's fortune hits either 0 orM?
+32
+
+020406005101520 Random walk simulation: p = 0.4, N = 20, start at 10 timepositionFigure 3.1: 10 simulated paths in the gambler's ruin model, with M = 20,n = 10 andp = 0:4.
+We see some get absorbed at 0, one at 20, and two whi complementh have not yet rea complementhed either boundary at time 80.
+Solution.
+Just as we used the partition theorem to get a re complementurren complemente for the probability of bankrupt complementy, we can use the partition theorem for expe complementtations to get a re complementurren complemente for the ex - pe complementted length of the pro complementess.
+Let the initial fortune be £n, and letXbe the number of steps until the walk rea complementhes one of the barriers at 0 or M.
+Writeenfor the expe complementtation of X.
+Then en = pE[Xj rst step is to n + 1] + qE[Xj rst step is to n 1]: Let's think carefully about the conditional expe complementtations on the right - hand side.
+If the rst step is ton + 1, then we have already spent one step to get there, and thereafter the number of steps to rea complementh the boundary is just the time to rea complementh the boundary in a walk starting from n + 1.
+Hen complemente we get E[Xj rst step is to n + 1] = 1 + en + 1; and similarly E[Xj rst step is to n 1] = 1 + en 1: So we obtain the re complementurren complemente en = p(1 + en + 1) + q(1 + en 1) 33
+
+whi complementh rearranges to give pen + 1 en + qen 1 =  1: (3.6) Our boundary conditions are e0 = eM = 0.
+Note that (3.6) has exa complementtly the same form as (3.5), ex complementept that the equation is no longer homogeneous: we have the constant  1 on the right - hand side instead of 0.
+Take the case p6 = q.
+As above, we have the general solution to the homogeneous equation wn = A + Bq pn : For a parti complementular solution to (3.6), try vn = Cn( note that there's no point trying a constant sin complemente we already know that any constant solves the homogeneous equation).
+This yields pC(n + 1) Cn + qC(n 1) =  1 and soC =  1 = (p q).
+Putting everything together, we get en = A + Bq pn  n p q: Using the boundary conditions, we get e0 = 0 = A + B; eM = 0 = A + Bq pM  M p q: Solving for AandB, we nally obtain en = M (p q)1 (q = p)n 1 (q = p)M n p q for 0nM.
+ Exer complementise 3.14.
+Findenforp = q = 1 = 2(the expression is rather simpler in that case!).
+Finally, consider what happens if we remove the upper barrier at M, and instead have a random walk on the in nite set f0;1;2;:::g, starting from some site n > 0.
+Does the walk ever rea complementh the site 0, or does it stay stri complementtly positive for ever?
+Let's look at the probability of the event that it hits 0.
+A natural idea is to let M!1 in the nite problem.
+Write u(M) nfor the probability of hitting 0 before M, whi complementh we cal complementulated above.
+Then we have lim M!1 u(M) n = 8 > < > :limM!1 q pn   q pM 1  q pM ifp6 = q limM!11 n Mifp = q = 1 = 2 = ( q pn ifp > q 1 ifpq.
+It turns out that this limit as M!1 really does give the appropriate probability that the random walk onf0;1;2;:::ghits 0.
+In parti complementular, the walk has positive probability to stay away from 0 for ever if and only if p > q .
+There are various ways to prove this; the idea below is not compli complementated, but is nonetheless somewhat subtle.
+Theorem 3.15.
+(Non - examinable) Consider a random walk on the integers Z, started from some n > 0, whi complementh at ea complementh step in complementreases by 1 with probability p, and de complementreases by 1 with probability q = 1 p.
+Then the probability unthat the walk ever hits 0 is given by un = ( q pn ifp > q , 1 ifpq.
+34
+
+Proof.
+In Proposition A.8 in the Appendix, we prove a useful result about in complementreasing sequen complementes of events .
+A sequen complemente of events Ak;k1 is called in complementreasing ifA1A2A3:::.
+Then Proposition A.8 says that for su complementh a sequen complemente of events, P 1[ k = 1 Ak!
+= lim k!1 P(Ak): (This can be regarded as a sort of continuity result for the probability fun complementtion P.) To apply this result to the random walk started from n, consider the event Hthat the random walk rea complementhes 0, and for ea complementh M, consider the event AMthat the random walk rea complementhes 0 before M.
+If the walk ever rea complementhes 0, then there must be some Msu complementh that the walk rea complementhes 0 before M, so thatAMo complementcurs.
+Conversely, if any event AMo complementcurs, then clearly the event Halso o complementcurs.
+Hen complemente we have H = S MAM.
+Then indeed we have un = P(H) = P 1[ M = 1 AM!
+= lim M!1 P(AM) = lim M!1 u(M) n; as desired.
+35
+
+Chapter 4 Probability generating fun complementtions We're now going to turn to an extremely powerful tool, not just in cal complementulations but also in proving more abstra complementt results about dis complementrete random variables.
+From now on we consider non - negative integer - valued random variables i.e.
+Xtakes values in f0;1;2;:::g.
+De nition 4.1.
+LetXbe a non - negative integer - valued random variable.
+Let S: = ( s2 R:1 X k = 0 jsjkP(X = k) < 1) : Then the probability generating fun complementtion (p.g.f.) ofXisGX:S!Rde ned by GX(s) = E[sX] = 1 X k = 0 skP(X = k): Let us agree to save spa complemente by setting pk = pX(k) = P(X = k): Noti complemente that be complementauseP1 k = 0 pk = 1,GX(s) is certainly de ned for jsj1 (i.e.
+[ 1;1]S), and GX(1) = 1.
+Noti complemente also that GX(s) is just a real - valued fun complementtion .
+The parameter sis the argument of the fun complementtion and has nothing to do with X.
+It plays the same role as xif I write sin x, for example.1 Why are generating fun complementtions so useful?
+Be complementause they en complementode all of the information about the distribution of Xin a single fun complementtion.
+It will turn out that we can get at this information by using the tools of cal complementulus.
+Theorem 4.2 (Uniqueness theorem) .The distribution of Xis uniquely determined by its prob - ability generating fun complementtion, GX.
+1 The probability generating fun complementtion is an example of a power series , that is a fun complementtion of the form f(x) = P1 n = 0 cnxn.
+It may be that this sum diverges for some values of x; the radius of convergen complemente is the value rsu complementh that the sum converges if jxj < rand diverges if jxj > r.
+For a probability generating fun complementtion, we can see that the radius of convergen complemente must be at least 1.
+For the purposes of this course, you are safe to assume that the derivative offis well - de ned for jxj < rand is given by f0(x) = 1 X n = 1 n complementnxn 1 i.e.
+what you would get di erentiating term - by - term.
+Those of you who are doing Analysis I & II will learn more about power series there.
+36
+
+Proof.
+First note that GX(0) = p0.
+Now, forjsj < 1, we can di erentiate GX(s) term - by - term to get G0 X(s) = p1 + 2 p2 s + 3 p3 s2 + : Settings = 0, we see that G0 X(0) = p1.
+Similarly, by di erentiating repeatedly, we see that dk dskGX(s) s = 0 = k!pk: So we can re complementover p0;p1;:::fromGX.
+Probability generating fun complementtions for common distributions.
+1.Bernoulli distribution.
+XBer(p).
+Then GX(s) = X kpksk = qs0 + ps1 = q + ps for alls2 R.
+2.Binomial distribution.
+XBin(n;p).
+Then GX(s) = nX k = 0 skn k pk(1 p)n k = nX k = 0n k (ps)k(1 p)n k = (1 p + ps)n; by the binomial theorem.
+This is valid for all s2 R.
+3.Poisson distribution.
+XPo().
+Then GX(s) = 1 X k = 0 skke  k!
+= e 1 X k = 0(s)k k!
+= e(s 1) for alls2 R.
+4.Geometri complement distribution with parameter p.Exer complementise on the problem sheet: che complementk that GX(s) = ps 1 (1 p)s; provided thatjsj < 1 1 p.
+Theorem 4.3.
+IfXandYare independent, then GX + Y(s) = GX(s)GY(s): Proof.
+We have GX + Y(s) = E sX + Y = E sXsY : Sin complementeXandYare independent, sXandsYare independent (see a question on the problem sheet).
+So then by Theorem 2.23, this is equal to E sX E sY = GX(s)GY(s): This can be very useful for proving distributional relationships.
+Theorem 4.4.
+Suppose that X1;X2;:::;Xnare independent Ber(p)random variables and let Y = X1 +  + Xn.
+ThenYBin(n;p).
+37
+
+Proof.
+We have GY(s) = E[sY] = E[sX1 +  + Xn] = E[sX1sXn] = E[sX1]E[sXn] = (1 p + ps)n: AsYhas the same p.g.f.
+as a Bin( n;p) random variable, the Uniqueness theorem yields that YBin(n;p).
+The interpretation of this is that Xitells us whether the ith of a sequen complemente of independent coin ips is heads or tails (where heads has probability p).
+ThenY complementounts the number of heads innindependent coin ips and so must be distributed as Bin( n;p).
+Theorem 4.5.
+Suppose that X1;X2;:::;Xnare independent random variables su complementh that Xi Po(i).
+Then nX i = 1 XiPo nX i = 1i!
+: In parti complementular, if i = for all 1inthenPn i = 1 XiPo(n).
+Proof.
+Re complementall that E sXi = ei(s 1).
+By independen complemente, E sX1 + X2 + ::: + Xn = nY i = 1 E sXi = nY i = 1 ei(s 1) = exp (s 1)nX i = 1i!
+: Sin complemente this is the p.g.f.
+of the Po(Pn i = 1i) distribution and probability generating fun complementtions uniquely determine distributions, the result follows.
+4.1 Cal complementulating expe complementtations using probability generating fun complement - tions We've already seen that di erentiating GX(s) and setting s = 0 gives us a way to get at the probability mass fun complementtion of X.
+Derivatives at other points can also be useful.
+We have G0 X(s) = d dsE[sX] = d ds1 X k = 0 skP(X = k) = 1 X k = 0 d dsskP(X = k) = 1 X k = 0 ksk 1 P(X = k) = E[XsX 1]: So G0 X(1) = E[X] (as long as E[X] exists).
+Di erentiating again, we then similarly get G00 X(1) = E[X(X 1)] = E[X2] E[X]; and so, in parti complementular, var (X) = G00 X(1) + G0 X(1) (G0 X(1))2: In general, dk dskGX(s) s = 1 = E[X(X 1)(X k + 1)]: Example 4.6.
+LetY = X1 + X2 + X3, whereX1,X2 andX3 are independent random variables ea complementh having probability generating fun complementtion G(s) = 1 6 + s 3 + s2 2: 38
+
+1.
+Find the mean and varian complemente of X1.
+2.
+What is the p.g.f.
+of Y?
+What is P(Y = 3) ?
+3.
+What is the p.g.f.
+of 3 X1?
+Why is it not the same as the p.g.f.
+of Y?
+What is P(3 X1 = 3) ?
+Solution.
+1.
+Di erentiating the probability generating fun complementtion, G0(s) = 1 3 + s; G00(s) = 1; and so E[X1] = G0(1) = 4 3 and var (X1) = G00(1) + G0(1) (G0(1))2 = 1 + 4 3 16 9 = 5 9: 2.
+Just as in our derivation of the probability generating fun complementtion for the binomial distribution, GY(s) = E[sX1 + X2 + X3] = E[sX1]E[sX2]E[sX3] and so GY(s) = 1 6 + s 3 + s2 23 = 1 216  1 + 6 s + 21 s2 + 44 s3 + 63 s4 + 54 s5 + 27 s6 : P(Y = 3) is the coecient of s3 inGY(s), that is11 54.
+(As an exer complementise, cal complementulate P(Y = 3) dire complementtly.) 3.
+We have G3 X1(s) = E[s(3 X1)] = E[(s3)X1] = GX1(s3) = 1 6 + s3 3 + s6 2: This is di erent from GY(s) be complementause 3 X1 andS3 have di erent distributions { knowing X1 does not tell you Y, but it does tell you 3 X1.
+Finally, P(3 X1 = 3) = P(X1 = 1) = 1 3. Of course, for ea complementh xed s2 R,sXis itself a dis complementrete random variable.
+So we can use the law of total probability when cal complementulating its expe complementtation.
+Example 4.7.
+Suppose that there are nred balls,nwhite balls and 1 blue ball in an urn.
+A ball is sele complementted at random and then repla complemented.
+Let Xbe the number of red balls sele complementted before a blue ball is chosen.
+Find (a) the probability generating fun complementtion of X, (b)E[X], (c)var (X).
+Solution.
+(a) We will use the law of total probability for expe complementtations.
+Let Rbe the event that the rst ball is red, Wbe the event that the rst ball is white and Bbe the event that the rst ball is blue.
+Then GX(s) = E sX = E sXjR P(R) + E sXjW P(W) + E sXjB P(B): Of course, the value of Xis a e complementted by the rst ball whi complementh is pi complementked.
+If the rst ball is blue then we know that X = 0.
+If the rst ball is white, we learn nothing about the value of X.
+If the rst 39
+
+ball is red then e e complementtively we start over again counting numbers of red balls, but we add 1 for the red ball we have already seen.
+This yields GX(s) = E s1 + X P(R) + E sX P(W) + E s0 P(B) = sGX(s)n 2 n + 1 + GX(s)n 2 n + 1 + 1 2 n + 1 and so GX(s) = 1 n + 1 ns = 1 = (n + 1) 1 (1 1 = (n + 1))s: (b) Di erentiating, we get G0 X(s) = n (n + 1 ns)2 and so E[X] = G0 X(1) = n: (c) Re complementall that var (X) = G00 X(1) + G0 X(1) (G0 X(1))2: Di erentiating the p.g.f.
+again we get G00 X(s) = 2 n2 (n + 1 ns)3 and soG00 X(1) = 2 n2.
+Hen complemente, var (X) = 2 n2 + n n2 = n(n + 1): If we were just asked for E[X] it would be easier to cal complementulate E[X] = E[XjR]P(R) + E[XjW]P(W) + E[XjB]P(B) = (1 + E[X])N 2 n + 1 + E[X]n 2 n + 1 + 01 2 n + 1 = n: In order to cal complementulate var ( X), however, we need both E[X] andE X2 and so it's easier just to ndGX(s) and di erentiate it.
+ Theorem 4.8.
+LetX1;X2;::: be i.i.d.
+non - negative integer - valued random variables with p.g.f.
+GX(s).
+LetNbe another non - negative integer - valued random variable, independent of X1;X2;::: and with p.g.f.
+GN(s).
+Then the p.g.f.
+ofPN i = 1 XiisGN(GX(s)).
+Noti complemente that the sumPN i = 1 Xihas a random number of terms.
+We interpret it as 0 if N = 0.
+Proof.
+We partition a complementcording to the value of N: we have E sX1 +  + XN = 1 X n = 0 E sX1 +  + XNjN = n P(N = n) by the law of total probability = 1 X n = 0 E sX1 +  + XnjN = n P(N = n) = 1 X n = 0 E sX1 +  + Xn P(N = n) by the independen complemente of NandfX1;X2;:::g = 1 X n = 0 E sX1 E sXn P(N = n) sin complementeX1;X2;:::are independent = 1 X n = 0(GX(s))nP(N = n) = GN(GX(s)): 40
+
+Corollary 4.9.
+Suppose that X1;X2;::: are independent and identi complementally distributed Ber(p)ran - dom variables and that NPo(), independently of X1;X2;:::.
+ThenPN i = 1 XiPo(p).
+(Noti complemente that we saw this result in disguise via a totally di erent method in a problem sheet question.) Proof.
+We haveGX(s) = 1 p + psandGN(s) = exp((s 1)) and so by Theorem 4.8, Eh sPN i = 1 Xii = GN(GX(s)) = exp((1 p + ps 1)) = exp(p(s 1)): Sin complemente this is the p.g.f.
+of Po( p) and p.g.f.'s uniquely determine distributions, the result follows.
+Example 4.10.
+In a short xed time period, a photomultiplier dete complementts 0, 1 or 2 photons with probabilities1 2,1 3 and1 6 respe complementtively.
+The photons dete complementted by the photomultiplier cause it to give o a charge of 2, 3, 4 or 5 ele complementtrons (with equal probability) independently for every one photon originally dete complementted.
+What is the probability generating fun complementtion of the number of ele complementtrons given o in the time period?
+What is the probability that exa complementtly ve ele complementtrons are given o in that period?
+Solution.
+LetNbe the number of photons dete complementted.
+Then the probability generating fun complementtion ofNis GN(s) = 1 2 + 1 3 s + 1 6 s2: LetXibe the number of ele complementtrons given o by the ith photon dete complementted.
+Then Y = X1 +  + XN is the total number given o in the period (remember that Nhere is random ).
+NowGX(s) = 1 4(s2 + s3 + s4 + s5) and so, by Theorem 4.8, GY(s) = GN(GX(s)) = 1 2 + 1 3 GX(s) + 1 6(GX(s))2 = 1 2 + 1 12 s2 + 1 12 s3 + 1 12 s4 + 1 12 s5 + 1 96(s4 + 2 s5 + 3 s6 + 4 s7 + 3 s8 + 2 s9 + s10): The probability that ve ele complementtrons are given o is the coecient of s5, that is5 48. 4.2 Bran complementhing pro complementesses A really ni complemente illustration of the power of probability generating fun complementtions is in the study of bran complementhing pro complementesses .
+Suppose we have a population (say of ba complementteria).
+Ea complementh individual in the population lives a unit time and, just before dying, gives birth to a random number of children in the next generation.
+This number of children has probability mass fun complementtion p(i);i0, called the o spring distribution .
+Di erent individuals reprodu complemente independently in the same manner.
+Here is a possible family tree of su complementh a population: 41
+
+We start at the top of the tree, with a single individual in generation 0.
+Then there are 3 individuals in generations 1 and 2, 5 individuals in generation 3, a single individual in generation 4 and no individuals in subsequent generations.
+LetXnbe the size of the population in generation n, so thatX0 = 1.
+LetC(n) ibe the number of children of the ith individual in generation n0, so that we may write Xn + 1 = C(n) 1 + C(n) 2 +  + C(n) Xn: (We interpret this sum as 0 if Xn = 0.) Note that C(n) 1;C(n) 2;:::are independent and identi complementally distributed.
+Let G(s) = P1 i = 0 p(i)siand letGn(s) = E sXn .
+Theorem 4.11.
+Forn0, Gn + 1(s) = Gn(G(s)) = G(G(:::G|{z} n + 1 times(s):::)) = G(Gn(s)): Proof.
+Sin complementeX0 = 1, we have G0(s) = s.
+Also, we get X1 = C(0) 1 whi complementh has p.m.f.
+p(i);i0.
+SoG1(s) = E sX1 = G(s).
+Sin complemente Xn + 1 = XnX i = 1 C(n) i; by Theorem 4.8 we get Gn + 1(s) = E sXn + 1 = Eh sPXn i = 1 C(n) ii = Gn(G(s)): Hen complemente, by indu complementtion, for n1, Gn + 1(s) = G(G(:::G|{z} n + 1 times(s):::)) = G(Gn(s)): Corollary 4.12.
+Suppose that the mean number of children of a single individual is i.e.P1 i = 1 ip(i) = .
+Then E[Xn] = n: Proof.
+We have E[Xn] = G0 n(1).
+By the chain rule, G0 n(s) = d dsG(Gn 1(s)) = G0 n 1(s)G0(Gn 1(s)): Plugging in s = 1, we get E[Xn] = E[Xn 1]G0(1) = E[Xn 1]and, indu complementtively, E[Xn] = n.
+42
+
+In parti complementular, noti complemente that we get exponential growth on average if  > 1 and exponential de complementrease if  < 1.
+This raises an interesting question: can the population die out?
+If p(0) = 0 then every individual has at least one child and so the population clearly grows forever.
+If p(0) > 0, on the other hand, then the population dies out with positive probability be complementause P(population dies out) = P([1 n = 1 fXn = 0 g)P(X1 = 0) = p(0) > 0: (Noti complemente that this holds even in the cases where E[Xn] grows asn!1 !) Example 4.13.
+Suppose that p(i) = (1 = 2)i + 1,i0, so that ea complementh individual has a geometri complement number of o spring.
+What is the distribution of Xn?
+Solution.
+First cal complementulate G(s) = 1 X k = 0 sk1 2k + 1 = 1 2 s: By plugging this into itself a couple of times, we get G2(s) = 2 s 3 2 s; G 3(s) = 3 2 s 4 3 s: A natural guess is that Gn(s) = n (n 1)s (n + 1) nswhi complementh is, in fa complementt, the case, as can be proved by indu complementtion.
+If we want the probability mass fun complementtion of Xn, we need to expand this quantity out in powers ofs.
+We have 1 (n + 1) ns = 1 n + 11 1 ns = (n + 1) = 1 X k = 0 nksk (n + 1)k + 1: Multiplying by n (n 1)s, we get Gn(s) = 1 X k = 0 nk + 1 sk (n + 1)k + 1 1 X k = 1 nk 1(n 1)sk (n + 1)k = n n + 1 + 1 X k = 1 nk 1 sk (n + 1)k + 1: We can read o the coecients now to see that P(Xn = k) = (n n + 1 ifk = 0 nk 1 (n + 1)k + 1 ifk1: Noti complemente that P(Xn = 0)!1 asn!1 , whi complementh indi complementates that the population dies out eventually in this case.
+ 4.2.1 Extin complementtion probability ( non - examinable ) Let's return to the general case for the moment and let q = P(population dies out).
+We can call qtheextin complementtion probability of the bran complementhing pro complementess.
+We can nd an equation satis ed by qby conditioning on the number of children of the rst individual.
+q = 1 X k = 0 P(population dies out jX1 = k)P(X1 = k) = 1 X k = 0 P(population dies out jX1 = k)p(k): Now remember that ea complementh of the kindividuals in the rst generation behaves exa complementtly like the parent.
+In parti complementular, we can think of ea complementh of them starting its own family, whi complementh is an independent copy of the original family.
+Moreover, the whole population dies out if and only if all of these sub - populations die out.
+If we had kfamilies, this o complementcurs with probability qk.
+So q = 1 X k = 0 qkp(k) = G(q): (4.1) 43
+
+The equation q = G(q) doesn't quite enable us to determine q: noti complemente that 1 is always a solution, but it's not ne complementessarily the only solution in [0 ;1].
+Using Proposition A.8 about in complementreasing sequen complementes of events (see Appendix), we have q = P [ nfXn = 0 g!
+= lim n!1 P(Xn = 0) = lim n!1 Gn(0): (4.2) Theorem 4.14.
+The extin complementtion probability qis the smallest non - negative solution of x = G(x) (4.3) Proof.
+From (4.1) we know that qsolves (4.3).
+Suppose some r0 also solves (4.3).
+We claim that in that case, Gn(0)rfor alln0.
+In that case we are done, sin complemente then also q = limn!1 Gn(0)r, and so indeed qis smaller than any other solution of (4.3).
+We use indu complementtion to prove the claim that Gn(0)rfor alln.
+For the base case n = 0, we haveG0(0) = 0ras required.
+For the indu complementtion step, suppose that Gn 1(0)r.
+Now noti complemente that the generating fun complementtion G(s) = P1 k = 0 p(k)skis a non - de complementreasing fun complementtion for s0.
+Hen complemente Gn(0) = G  Gn 1(0) G(r) = r; as required.
+This completes the proof.
+It turns out that the question of whether the bran complementhing pro complementess inevitably dies out is deter - mined by the mean number of children of a single individual.
+To avoid a trivial case, we assume in the next result that p(1)6 = 1.
+(Ifp(1) = 1 then Xn = 1 with probability 1, for all n.) Then we nd that there is a positive probability of survival of the pro complementess for ever if and only if  > 1.
+Theorem 4.15.
+Assumep(1)6 = 1.
+Thenq = 1 if1, andq < 1 if > 1.
+Proof.
+Note rst that there's a qui complementk argument for the case where is stri complementtly less than 1.
+Note that asXntakes non - negative integer values, P(Xn > 0)E[Xn] (sin complemente P(Xn > 0) = P k1 P(Xn = k)P k1 kP(Xn = k) = E[Xn]).
+But from Corollary 4.12, we have E[Xn] = n.
+Hen complemente P(Xn > 0)!0 asn!1 , and so from (4.2), we get q = 1.
+Now we give a more general argument that also covers the cases  = 1 and > 1.
+First, observe that the gradient G0(s) = P k = 1 kp(k)sk 1 is non - de complementreasing for s0 (and, indeed, stri complementtly in complementreasing unless p0 + p1 = 1).
+That is, Gis complementonvex .
+It is instru complementtive to consider the consequen complementes of convexity on the graph of y = G(x), on the intervalx2[0;1], and parti complementularly near x = 1.
+The graph passes through the points (0 ;p0) and (1;1), and at (1 ;1) its slope is  = G0(1).
+We have the following two cases: (1) Suppose  > 1.
+Sin complemente the gradient of the curve y = G(x) is more than 1 at x = 1, and the curve starts on the non - negative y - axis atx = 0, it must cross the line y = xat some x2[0;1).
+Hen complemente indeed the smallest non - negative xed point qofGis less than 1.
+This is illustrated on the left side of Figure 4.1.
+44
+
+y = G(x)y = x p0 0 11 0 11 y = xy = G(x) p0 Figure 4.1: On the left, the case  > 1; on the right, the case 1.
+(2) Suppose 1.
+The gradient at 1 is at most 1, and in fa complementt the gradient is stri complementtly less than 1 for allx2[0;1).
+(We ex complementluded the case p1 = 1 for whi complementh the gradient is 1 everywhere.) Now the fun complementtion y = G(x) must stay above the line y = xthroughout [0 ;1).
+So the smallest non - negative xed point qofGis 1.
+This is illustrated on the right side of Figure 4.1.
+45
+
+Chapter 5 Continuous random variables 5.1 Random variables and cumulative distribution fun complementtions Re complementall that we de ned a dis complementrete random variable on a probability spa complemente ( ;F;P) to be a fun complementtion X: !Rsu complementh thatX complementan only take countably many values (and su complementh that we can assign a probability to the event fX = xg, i.e.
+su complementh thatfX = xg2 F ).
+There is, however, a more general notion.
+The essential idea is that a random variable can be any(suciently ni complemente) fun complementtion X: !R, whi complementh represents some sort of observable quantity in our random experiment.
+Why do we need more general random variables?
+Some out complementomes are essentially continuous.
+In parti complementular, many physi complemental quantities are most naturally modelled as taking un complementountably many possible values, for example, lengths, weights and speeds.
+Even for dis complementrete quantities, it is often useful to think instead in terms of continuous ap - proximations.
+For example, suppose you wish to consider the number of working adults who regularly contribute to charity.
+You might model this number as X2 f0;1;:::;ng, wherenis the total number of working adults in the UK.
+We could, in theory, model this as a Bin(n;p) random variable where p = P(adult contributes).
+But nis measured in millions.
+So instead model YX nas a continuous random variable taking values in [0 ;1] and giving the proportion of adults who contribute.
+To give a con complementrete example of a random variable whi complementh is not dis complementrete, imagine you have a board game spinner.
+You spin the arrow and it lands pointing at an angle somewhere between 0 and 2in su complementh a way that every angle is equally likely; we want to model this angle as a random variable X.
+How can we des complementribe its distribution?
+We can't assign a positive probability to ea complementh angle { our probabilities wouldn't sum to 1.
+To get around this, we don't de ne the probability of individual sample points, but only of certain natural events.
+For example, by symmetry we expe complementt that P(X) = 1 = 2.
+More generally, we expe complementt the probability that Xlies in an interval [ a;b][0;2) to be proportional to the length of that interval: P(X2[a;b]) = b a 2, 0a < b < 2.
+De nition 5.1.
+Arandom variable Xde ned on a probability spa complemente ( ;F;P) is a fun complementtion X: !Rsu complementh thatf!:X(!)xg2 F for ea complementhx2 R.
+Let's just che complementk that this in complementludes our earlier de nition.
+If Xis a dis complementrete random variable then f!:X(!)xg = [ yx:y2 ImXf!:X(!) = yg: Sin complemente ImXis countable, this is a countable union of events in Fand, therefore, itself belongs to F.
+46
+
+Of course,f!:X(!)xg2 F means pre complementisely that we can assign a probability to this event.
+The colle complementtion of these probabilities as xvaries in Rwill play a central part in what follows.
+De nition 5.2.
+The cumulative distribution fun complementtion (c.d.f.) of a random variable Xis the fun complementtionFX:R![0;1] de ned by FX(x) = P(Xx): Example 5.3.
+LetXbe the number of heads obtained in three tosses of a fair coin.
+Then P(X = 0) = 1 8,P(X = 1) = P(X = 2) = 3 8 andP(X = 3) = 1 8.
+So FX(x) = 8 > > > > > > < > > > > > > :0 ifx < 0 1 8 if0x < 1 1 8 + 3 8 = 1 2 if1x < 2 1 8 + 3 8 + 3 8 = 7 8 if2x < 3 1 ifx3.
+x 1 2 3 0 Example 5.4.
+LetXbe the angle of the board game spinner.
+Then FX(x) = 8 > < > :0 ifx < 0, x 2if0x < 2, 1 ifx2.
+We can immediately write down some properties of the c.d.f.
+FX complementorresponding to a general random variable X.
+Theorem 5.5.
+1.FXis non - de complementreasing.
+2.P(a < Xb) = FX(b) FX(a)fora < b .
+3.
+Asx! 1 ,FX(x)!0.
+4.
+Asx!1 ,FX(x)!1.
+Proof.
+1.
+Ifa < b thenf!:X(!)agf!:X(!)bgand so FX(a) = P(Xa)P(Xb) = FX(b): 2.
+Sin complementefXagis a subset offXbg, P(a < Xb) = P(fXbgnfXag) = P(Xb) P(Xa) = FX(b) FX(a): 3 & 4.
+(sket complementh) Intuitively, we want to put \ FX( 1) = P(X 1 )" and then, sin complemente X complementan't possibly be 1(or less!), the only sensible interpretation we could give the right - hand side would be 0.
+Likewise, we would like to put \ FX(1) = P(X1)" and, sin complemente X complementannot be larger than 1, the only sensible interpretation we could give the right - hand side would be 1.
+The problem is that1 and 1 aren't real numbers, but FXis a fun complementtion on R.
+The only sensible way to deal with this problem is by taking limits and to do this carefully involves using the countable additivity axiom P3 in a somewhat intri complementate way.
+47
+
+Conversely, any fun complementtion Fsatisfying conditions 1, 3 and 4 of Theorem 5.5 plus right - continuity is the cumulative distribution fun complementtion of some random variable de ned on some probability spa complemente, although we will not prove this fa complementt.
+As you can see from the coin - tossing example, FXneed not be a smooth fun complementtion.
+Indeed, for a dis complementrete random variable, FXis always a step fun complementtion.
+However, in the rest of this chapter, we're going to con complemententrate on the case where FXis very smooth in that it has a derivative (ex complementept possibly at a colle complementtion of isolated points).
+De nition 5.6.
+A complementontinuous random variable Xis a random variable whose c.d.f.
+satis es FX(x) = P(Xx) = Zx  1 fX(u)du; wherefX:R!Ris a fun complementtion su complementh that (a)fX(u)0 for allu2 R (b)R1  1 fX(u)du = 1.
+fXis called the probability density fun complementtion (p.d.f.) ofXor, sometimes, just its density .
+Remark 5.7.
+The de nition of a continuous random variable leaves impli complementit whi complementh fun complementtionsfX might possibly serve as a probability density fun complementtion.
+Part of this is a more fundamental question con complementerning whi complementh fun complementtions we are allowed to integrate (and for some of you, that will be resolved in the Analysis III course in Trinity Term and in Part A Integration).
+For the purposes of this course, you may assume that fXis a fun complementtion whi complementh has at most countably many jumps and is smooth everywhere else.
+Indeed, in almost all of the examples we will consider, fXwill have 0, 1 or 2 jumps.
+Remark 5.8.
+The Fundamental Theorem of Cal complementulus (whi complementh some of you will see proved in Analysis III), tells us that FXof the form given in the de nition is di erentiable with dFX(x) dx = fX(x); at any point xwherefXis continuous.
+Example 5.9.
+Suppose that Xhas c.d.f.
+FX(x) = ( 0 ifx < 0 1 e xifx0: Consider f(x) = ( 0 forx < 0 e xforx0: ThenZx  1 f(u)du = ( 0 ifx < 0 Rx 0 e udu = 1 e xifx0, and soXis a continuous random variable with density fX(x) = f(x).
+Noti complemente that fX(0) = 1 and sofXhas a jump at x = 0.
+On the other hand, FXis smooth at 0, but it isn't di erentiable there.
+To see this, if we approa complementh 0 from the right, FXhas gradient tending to 1; if we approa complementh 0 from the left,FXhas gradient 0 and, sin complemente these don't agree, there isn't a well - de ned derivative.
+On the other hand, everywhere apart from 0 we do have F0 X(x) = fX(x).
+48
+
+Example 5.10.
+Suppose that a continuous random variable Xhas p.d.f.
+fX(x) = ( cx2(1 x)forx2[0;1] 0 otherwise.
+Find the constant cand an expression for the c.d.f.
+Solution.
+To nd the constant, c, note that we must have 1 = Z1  1 fX(x)dx = Z1 0 cx2(1 x)dx = cx3 3 x4 41 0 = c 12: It follows that c = 12.
+To nd the c.d.f., we simply integrate: FX(x) = Zx  1 fX(u)du = 8 > < > :0 for x < 0 Rx 012 u2(1 u)du for 06 x < 1 1 for x > 1.
+Sin complemente Zx 012 u2(1 u)du = 12x3 3 x4 4 ; we get FX(x) = 8 > < > :0 for x < 0 4 x3 3 x4 for 06 x < 1 1 for x > 1:  Example 5.11.
+The duration in minutes of mobile phone calls made by students is modelled by a random variable, X, with p.d.f.
+fX(x) = ( 1 6 e x = 6 ifx0 0 otherwise.
+What is the probability that a call lasts (i) between 3 and 6 minutes?
+(ii) more than 6 minutes?
+Solution.
+(i) P(3 < X6) = Z6 3 fX(x)dx = Z6 31 6 e x = 6 dx = e 1 2 e 1: (ii) P(X > 6) = Z1 6 fX(x)dx = Z1 61 6 e x = 6 dx = e 1:  We often use the p.d.f.
+of a continuous random variable analogously to the way we used the p.m.f.
+of a dis complementrete random variable.
+There are several similarities between the two: 49
+
+Probability density fun complementtion (continuous) Probability mass fun complementtion (dis complementrete) fX(x) > 08 x2 R pX(x) > 08 x2 R Z1  1 fX(x)dx = 1 X x2 ImXpX(x) = 1 FX(x) = Zx  1 fX(u)du FX(x) = X u6 x:u2 ImXpX(u) However, the analogy can be misleading.
+For example, there's nothing to prevent fX(x) ex complementeeding 1.
+WARNING: fX(x) IS NOT A PROBABILITY.
+Suppose that  > 0 is small.
+Then, by Taylor's theorem, P(x < Xx + ) = FX(x + ) FX(x)fX(x): SofX(x)is approximately the probability that Xfalls between xandx + (or, indeed, between x andx).
+What happens as !0?
+Theorem 5.12.
+IfXis a continuous random variable with p.d.f.
+fXthen P(X = x) = 0 for allx2 R and P(aXb) = Zb afX(x)dx for allab: Proof.
+(Non - examinable.) We argue by contradi complementtion.
+Suppose that for some x2 Rwe have P(X = x) > 0.
+Letp = P(X = x).
+Then for all n1,P(x 1 = n < Xx)p.
+We have P(x 1 = n < Xx) = FX(x) FX(x 1 = n) and soFX(x) FX(x 1 = n)pfor alln1.
+But FXis continuous at xand so lim n!1(FX(x) FX(x 1 = n)) = 0: This gives a contradi complementtion.
+So we must have P(X = x) = 0.
+Finally, P(aXb) = P(X = a) + P(a < Xb) and so, sin complemente P(X = a) = 0, we get P(aXb) = Zb afX(x)dx: So for a continuous r.v.
+X, the probability of getting any xed value xis 0!
+Why doesn't this break our theory of probability?
+We have f!:X(!)xg = [ yxf!:X(!) = yg and the right - hand side is an un complementountable union of disjoint events of probability 0.
+If the union were countable, this would entail that the left - hand side had probability 0 also, whi complementh wouldn't make mu complementh sense.
+But be complementause the union is un complementountable, we cannot expe complementt to \sum up" these zeros in order to get the probability of the left - hand side.
+The right way to resolve this problem is using a probability density fun complementtion.
+50
+
+Remark 5.13.
+There do exist random variables whi complementh are neither dis complementrete nor continuous.
+To give a slightly arti cial example, suppose that we ip a fair coin.
+If it comes up heads, sample U uniformly from [0;1]and setXto be the value obtained; if it comes up tails, let X = 1 = 2.
+Then X complementan take un complementountably many values but does not have a density.
+Indeed, as you can che complementk, P(Xx) = ( x 2 if0x < 1 = 2 x + 1 2 if1 = 2x1, and there does not exist a fun complementtion fXwhi complementh integrates to give this.
+The theory is parti complementularly ni complemente in the dis complementrete and continuous cases be complementause we can work with probability mass fun complementtions and probability density fun complementtions respe complementtively.
+But the cumulative distribution fun complementtion is a more general con complementept whi complementh makes sense for allrandom variables.
+5.2 Some classi complemental distributions As we did for dis complementrete distributions, we introdu complemente a sto complementk of examples of continuous distributions whi complementh will come up time and again in this course.
+1.The uniform distribution.
+Xhas the uniform distribution on an interval [ a;b] if it has p.d.f.
+fX(x) = ( 1 b aforaxb, 0 otherwise.
+We writeXU[a;b].
+2.The exponential distribution.
+Xhas the exponential distribution with parameter 0 if it has p.d.f.
+fX(x) = e x; x0: We writeXExp().
+The exponential distribution is often used to model lifetimes or the time elapsing between unpredi complementtable events (su complementh as telephone calls, arrivals of buses, earthquakes, emissions of radioa complementtive parti complementles, et complement).
+3.The gamma distribution.
+Xhas the gamma distribution with parameters > 0 and 0 if it has p.d.f.
+fX(x) =   ( )x  1 e x; x0: Here,  ( ) is the so - called gamma fun complementtion , whi complementh is de ned by  ( ) = Z1 0 u  1 e udu for > 0.
+For most values of this integral does not have a closed form.
+However, for a stri complementtly positive integer n, we have  ( n) = (n 1)!.
+(See the Wikipedia \Gamma fun complementtion" page for lots more information about this fas complementinating fun complementtion!) IfXhas the above p.d.f.
+we write XGamma( ;).
+The gamma distribution is a generalisation of the exponential distribution and possesses many ni complemente properties.
+The Chi - squared distribution with ddegrees of freedom , 2 d, whi complementh you may have seen at `A' Level, is the same as Gamma( d = 2;1 = 2) ford2 N.
+4.The normal (or Gaussian) distribution.
+Xhas the normal distribution with parame - ters2 Rand2 > 0 if it has p.d.f.
+fX(x) = 1 p 22 exp  (x )2 22 ; x2 R: 51
+
+We writeXN(;2).
+The standard normal distribution is N(0;1).
+The normal distri - bution is used to model all sorts of chara complementteristi complements of large populations and samples.
+Its fundamental importan complemente a complementross Probability and Statisti complements is a consequen complemente of the Central Limit Theorem, whi complementh you will use in Prelims Statisti complements and see proved in Part A Proba - bility.
+Exer complementise 5.14.
+For the uniform and exponential distributions: Che complementk that for ea complementh of these fXreally is a p.d.f.
+(i.e.
+that it is non - negative and integrates to 1).
+Cal complementulate the corresponding c.d.f.'s.
+Example 5.15.
+Show that I: = Z1  11 p 22 exp  (x )2 22 dx = 1: Solution.
+We rst change variables in the integral.
+Set z = (x ) = .
+Then I = Z1  11 p 22 exp  (x )2 22 dx = Z1  11 p 2exp  z2 2 dz: It follows that I2 = Z1  11 p 2exp  x2 2 dxZ1  11 p 2exp  y2 2 dy = Z1  1 Z1  11 2exp  (x2 + y2) 2 dxdy: Now convert to polar co - ordinates: let randbe su complementh that x = r complementosandy = rsin.
+Then the Ja complementobian isjJj = rand so we get Z2 0 Z1 01 2rexp  r2 2 drd = h  e r2 = 2 i1 0 = 1: Sin complementeIis clearly non - negative (it's the integral of a non - negative fun complementtion), we must have I = 1.
+ The c.d.f.
+of the standard normal distribution, FX(x) = Zx  11 p 2e u2 = 2 du; cannot be written in a closed form, but can be found by numeri complemental integration to an arbitrary degree of a complementcura complementy.
+This very important fun complementtion is usually called  and if you did some Statisti complements at `A' Level you will certainly have come a complementross tables of its values.
+5.3 Expe complementtation Re complementall that for a dis complementrete r.v.
+we de ned E[X] = X x2 ImXxpX(x) (5.1) 52
+
+whenever the sum is absolutely convergent and, more generally, for any fun complementtion h:R!R, we proved that E[h(X)] = X x2 ImXh(x)pX(x) (5.2) whenever this sum is absolutely convergent.
+We want to make an analogous de nition for con - tinuous random variables.
+Suppose Xhas a smooth p.d.f.
+fX.
+Then for any xand small > 0, P(xXx + )fX(x) and, in parti complementular, P(nX(n + 1))fX(n): So for the expe complementtation, we want something like 1 X n =  1(n)fX(n): We now want to take !0; intuitively, we should obtain an integral.
+De nition 5.16.
+LetXbe a continuous random variable with probability density fun complementtion fX.
+The expe complementtation ormean ofXis de ned to be E[X] = Z1  1 xfX(x)dx (5.3) wheneverR1  1 jxjfX(x)dx < 1.
+Otherwise, we say that the mean is unde ned (or as in the dis complementrete case, if only the positive tail diverges, we might say that E[X] = 1.) Theorem 5.17.
+LetXbe a continuous random variable with probability density fun complementtion fX, and lethbe a fun complementtion from RtoR.
+Then E[h(X)] = Z1  1 h(x)fX(x)dx: (5.4) (wheneverR1  1 jh(x)jfX(x)dx < 1).
+Noti complemente that (5.4) is analogous to (5.2) in the same way that (5.3) is analogous to (5.1).
+Proving Theorem 5.17 in full generality, for any fun complementtion h, is rather te complementhni complemental.
+Here we just give an idea of one approa complementh to the proof for a parti complementular class of fun complementtions.
+Proof of Theorem 5.17 (outline of idea, non - examinable).
+First we claim that if Xis a non - negative continuous random variable, then E[X] = R1 0 P(X > x )dx.
+To show this, we can write the expe complementtation as a double integral and change the order of integration: E[X] = Z1 x = 0 xfX(x)dx = Z1 x = 0 Zx y = 0 fX(x)dydx = Z1 y = 0 Z1 x = yfX(x)dxdy = Z1 y = 0 P(X > y )dy; giving the claim as required.
+53
+
+So now suppose his su complementh that h(X) is a non - negative continuous random variable.
+Then E[h(X)] = Z1 y = 0 P(h(X) > y)dy = Z1 y = 0 Z x:h(x) > yfX(x)dxdy = Z1 x = 0 fX(x)Z y:y < h(x)dydx = Z1 x = 0 fX(x)h(x)dx; giving the desired formula in this case.
+As in the case of dis complementrete random variables, we de ne the varian complemente ofXto be var (X) = E (X E[X])2 whenever the right - hand side is de ned.
+For simpli complementity of notation, write  = E[X].
+Then we have var (X) = Z1  1(x )2 fX(x)dx = Z1  1(x2 2 x + 2)fX(x)dx = Z1  1 x2 fX(x)dx 2Z1  1 xfX(x)dx + 2 Z1  1 fX(x)dx = E X2  2; sin complementeR1  1 xfX(x)dx = andR1  1 fX(x)dx = 1.
+So we re complementover the expression var (X) = E X2  (E[X])2: Just as in the dis complementrete case, expe complementtation has a linearity property .
+Theorem 5.18.
+SupposeXis a continuous random variable with p.d.f.
+fX.
+Then ifa;b2 R thenE[aX + b] = aE[X] + bandvar (aX + b) = a2 var (X).
+Proof.
+Bt Theorem 5.17, E[aX + b] = Z1  1(ax + b)fX(x)dx = aZ1  1 xfX(x)dx + bZ1  1 fX(x)dx = aE[X] + b; as required, sin complemente the density integrates to 1.
+Moreover, var (aX + b) = E (aX + b aE[X] b)2 = E a2(X E[X])2 = a2 E (X E[X])2 = a2 var (X): Example 5.19.
+SupposeXN(;2).
+Then Xhas the same distribution as  + Z, whereZN(0;1), Xhas c.d.f.FX(x) = ((x ) = ), where is the standard normal c.d.f., E[X] = , var (X) = 2.
+54
+
+Solution.
+First suppose that  = 0 and2 = 1.
+Then the rst two assertions are trivial and E[X] = Z1  1 xp 2e x2 = 2 dx whi complementh must equal 0 sin complemente the integrand is an odd fun complementtion.
+Sin complemente the mean is 0, var (X) = E X2 = Z1  1 x2 p 2e x2 = 2 dx = Z1  1 xxe x2 = 2 p 2dx: Integrating by parts (and taking limits of the bounds to 1), we get that this equals "  xe x2 = 2 p 2#1  1 + Z1  11 p 2e x2 = 2 dx = 1: So var (X) = 1.
+Suppose now that ZN(0;1).
+Then P( + Zx) = P(Z(x ) = ) = ((x ) = ): Let (x) = 1 p 2e x2 = 2, the standard normal density.
+Di erentiating P( + Zx) inx, we get 1  ((x ) = ) = 1 p 22 exp  (x )2 22 : So + ZN(;2).
+Finally, E[X] = E[ + Z] =  + E[Z] =  and var (X) = var ( + Z) = 2 var (Z) = 2:  Exer complementise 5.20.
+Show that if XU[a;b]andYExp()then E[X] = a + b 2;var (X) = (b a)2 12;E[Y] = 1 ;var (Y) = 1 2: Noti complemente, in parti complementular, that the parameter of the Exponential distribution is the re complementipro complemental of its mean.
+Example 5.21.
+Suppose that XGamma (2;2), so that it has p.d.f.
+fX(x) = ( 4 xe 2 xforx0, 0 otherwise.
+FindE[X]andE1 X .
+Solution.
+We have E[X] = Z1  1 x4 xe 2 xdx = Z1  123 2!x3 1 e 2 xdx and, sin complemente  (3) = 2!
+we re complementognise the integrand as the density of a Gamma(3 ;2) random variable.
+So it must integrate to 1 and we get E[X] = 1.
+On the other hand, E1 X = Z1  11 x4 xe 2 xdx = 2 Z1  12 e 2 xdx and again we re complementognise the integrand as the density of an Exp(2) random variable whi complementh must integrate to 1.
+So we get E1 X = 2.
+ WARNING: IN GENERAL, E1 X 6 = 1 E[X].
+55
+
+5.4 Examples of fun complementtions of continuous random variables Example 5.22.
+Imagine a forest.
+Suppose that Ris the distan complemente from a tree to the nearest neighbouring tree.
+Suppose that Rhas p.d.f.
+fR(r) = ( re r2 = 2 forr0, 0 otherwise.
+Find the distribution of the area of the tree - free cir complementle around the original tree.
+Solution.
+LetAbe the area of the tree - free cir complementle; then A = R2.
+We begin by nding the c.d.f.
+ofRand then use it to nd the c.d.f.
+of A.FR(r) is clearly 0 for r < 0.
+Forr0, FR(r) = P(Rr) = Zr 0 se s2 = 2 ds = h  e s2 = 2 ir 0 = 1 e r2 = 2: Hen complemente, using the fa complementt that R complementan't take negative values, FA(a) = P(Aa) = P  R2a = P Rra  = FRra  = 1 e a = (2) fora0.
+Of course, FA(a) = 0 fora < 0.
+Di erentiating for a0, we get fA(a) = 1 2e a = (2): So, re complementognising the p.d.f., we see that Ais distributed exponentially with parameter 1 = (2). Remark 5.23.
+The distribution of Rin Example 5.22 is called the Rayleigh distribution .
+One way in whi complementh this distribution o complementcurs is as follows.
+Pi complementk a point in R2 su complementh that the xandy co - ordinates are independent N (0;1)random variables.
+Then the Eu complementlidean distan complemente of that point from the origin (0;0)has the Rayleigh distribution (see Part A Probability for a proof of this fa complementt; there is a conne complementtion to Example 5.15).
+We can generalise the idea in Example 5.22 to prove the following theorem.
+Theorem 5.24.
+Suppose that Xis a continuous random variable with density fXand that h:R!Ris a di erentiable fun complementtion withdh(x) dx > 0 for allx, so thathis stri complementtly in complementreasing.
+ThenY = h(X)is a continuous random variable with p.d.f.
+fY(y) = fX(h 1(y))d dyh 1(y); whereh 1 is the inverse fun complementtion of h.
+Proof.
+Sin complementehis stri complementtly in complementreasing, h(X)yif and only if Xh 1(y).
+So the c.d.f.
+of Yis FY(y) = P(h(X)y) = P  Xh 1(y) = FX(h 1(y)): Di erentiating with respe complementt to yusing the chain rule, we get fY(y) = fX(h 1(y))d dyh 1(y): There is a similar result in the case where his stri complementtly de complementreasing.
+In any case, you may nd it easier to remember the proof than the statement of the theorem!
+What if the fun complementtion his not one - to - one?
+It's best to treat these on a case - by - case basis and think them through carefully.
+Here's an example.
+56
+
+Example 5.25.
+Suppose that a point is chosen uniformly from the perimeter of the unit cir complementle.
+What is the distribution of its x - co - ordinate?
+Solution.
+Represent the chosen point by its angle, .
+So then  has a uniform distribution on [0;2), with p.d.f.
+f() = ( 1 2for 0 < 2 0 otherwise : Moreover, the x - co - ordinate is X = cos , whi complementh takes values in [  1;1].
+We again work via c.d.f.'s: F() = 8 > < > :0 for < 0  2for 0 < 2 1 for2.
+Noti complemente that there are two angles in [0 ;2) corresponding to ea complementh x - co - ordinate in ( 1;1): ThenFX(x) = 0 forx 1,FX(x) = 1 forx1 and, forx2( 1;1), we can express the c.d.f.
+in terms of ar complementcos: [  1;1]![0;] as FX(x) = P(cos x) = P(ar complementcosx2 ar complementcosx) = F(2 ar complementcosx) F(ar complementcosx) = 1 ar complementcosx 2 ar complementcosx 2 = 1 1 ar complementcosx: This completely determines the distribution of X, but we might also be interested in the p.d.f.
+Di erentiating FX, we get dFX(x) dx = 8 > < > :1 1 p 1 x2 for 1 < x < 1 0 for x <  1 orx > 1 unde ned for x =  1 orx = 1: So we can take fX(x) = (1 1 p 1 x2 for 1 < x < 1 0 for x 1 orx1 and getFX(x) = Rx  1 fX(u)du.
+Noti complemente that fX(x)!1 asx!1 orx! 1 even thoughR1  1 fX(x)dx = 1.
+ 57
+
+5.5 Joint distributions We will often want to think of di erent random variables de ned on the same probability spa complemente.
+In the dis complementrete case, we studied pairs of random variables via their joint probability mass fun complementtion.
+For a pair of arbitrary random variables, we use instead the joint cumulative distribution fun complementtion , FX;Y:R2![0;1], given by FX;Y(x;y) = P(Xx;Yy): It's again possible to show that this fun complementtion is non - de complementreasing in ea complementh of its arguments, and that lim x! 1 lim y! 1 FX;Y(x;y) = 0 and lim x!1 lim y!1 FX;Y(x;y) = 1: De nition 5.26.
+LetXandYbe random variables su complementh that FX;Y(x;y) = Zy  1 Zx  1 fX;Y(u;v)dudv for some fun complementtion fX;Y:R2!Rsu complementh that (a)fX;Y(u;v)0 for allu;v2 R (b)R1  1 R1  1 fX;Y(u;v)dudv = 1.
+ThenXandYarejointly continuous andfX;Yis their joint density fun complementtion .
+IffX;Yis suciently smooth at ( x;y), we get fX;Y(x;y) = @2 @x@yFX;Y(x;y): For a single continuous random variable X, it turns out that the probability that it lies in some ni complemente set AR(see Part A Integration to see what we mean by \ni complemente", but note that any set you can think of or write down will be!) can be obtained by integrating its density over A: P(X2 A) = Z AfX(x)dx: Likewise, for ni complemente sets BR2 we obtain the probability that the pair ( X;Y ) lies inBby integrating the joint density over the set B: P((X;Y )2 B) = ZZ (x;y)2 BfX;Y(x;y)dxdy: We will show here that this works for re complementtangular regions B.
+Theorem 5.27.
+For a pair of jointly continuous random variables XandY, we have P(a < Xb; c < Yd) = Zd cZb afX;Y(x;y)dxdy; fora < b and complement < d .
+58
+
+Proof.
+We have P(a < Xb; c < Yd) = P(Xb; Yd) P(Xa; Yd) + P(Xa; Yc) P(Xb; Yc) = FX;Y(b;d) FX;Y(a;d) + FX;Y(a;c) FX;Y(b;c) = Zd cZb afX;Y(x;y)dxdy: Theorem 5.28.
+SupposeXandYare jointly continuous with joint density fX;Y.
+ThenXis a continuous random variable with density fX(x) = Z1  1 fX;Y(x;y)dy; and similarly Yis a continuous random variable with density fY(y) = Z1  1 fX;Y(x;y)dx: In this context the one - dimensional densities fXandfYare called the marginal densities of the joint distribution with joint density fX;Y, just as in the dis complementrete case at De nition 2.16.
+Proof.
+IffXis de ned by fX(x) = R1  1 fX;Y(x;y)dy, then we have Zx  1 fX(u)du = Zx  1 Z1  1 fX;Y(u;y)dydu = P(Xx); so indeedXhas density fX(and the case of fYis identi complemental).
+The de nitions and results above generalise straightforwardly to the case of nrandom vari - ables,X1;X2;:::;Xn.
+Example 5.29.
+Let fX;Y(x;y) = ( 1 2(x + y)for0x1,1y2, 0 otherwise.
+Che complementk that fX;Y(x;y)is a joint density.
+What is P  X1 2;Y3 2 ?
+What are the marginal densities?
+What is P  X1 2 ?
+Solution.
+Clearly,fX;Y(x;y)0 for allx;y2 R.
+We have Z1  1 Z1  1 fX;Y(x;y)dxdy = Z2 1 Z1 01 2(x + y)dxdy = Z2 11 4 x2 + 1 2 xy1 0 dy = Z2 11 4 + 1 2 y dy = 1 4 y + 1 4 y22 1 = 1: 59
+
+We have P X1 2;Y3 2 = Z2 3 = 2 Z1 = 2 01 2(x + y)dxdy = Z2 3 = 21 4 x2 + 1 2 xy1 = 2 0 dy = Z2 3 = 21 16 + 1 4 y dy = 1 16 y + 1 8 y22 3 = 2 = 1 4: Integrating out ywe get fX(x) = Z2 11 2(x + y)dy = 1 2 x + 3 4 forx2[0;1], and integrating out xwe get fY(y) = Z1 01 2(x + y)dx = 1 4 + 1 2 y fory2[1;2].
+Using the marginal density of X, P X1 2 = Z1 1 21 2 x + 3 4 dx = 9 16:  De nition 5.30.
+Jointly continuous random variables XandYwith joint density fX;Yare independent if fX;Y(x;y) = fX(x)fY(y) for allx;y2 R.
+Likewise, jointly continuous random variables X1;X2;:::;Xnwith joint density fX1;X2;:::;Xnareindependent if fX1;X2;:::;Xn(x1;x2;:::;xn) = fX1(x1)fX2(x2):::fXn(xn) for allx1;x2;:::;xn2 R.
+Note that if XandYare independent then it follows easily that FX;Y(x;y) = FX(x)FY(y) for allx;y2 R.
+Example 5.31.
+Consider the set - up of Example 5.29.
+Sin complemente 1 2(x + y)6 = 1 2 x + 3 41 4 + 1 2 y ; XandYare not independent.
+60
+
+5.5.1 Expe complementtation We can write the expe complementtation of a fun complementtion hof a pair (X;Y ) of jointly continuous random variables in a natural way.
+Theorem 5.32.
+E[h(X;Y )] = Z1  1 Z1  1 h(x;y)fX;Y(x;y)dxdy: As in the case of Theorem 5.17, a general proof of this result is rather te complementhni complemental, and we don't cover it here.
+However, note again that there is a very dire complementt analogy with the dis complementrete case whi complementh we saw in equation (2.2).
+In parti complementular, the covarian complemente ofXandYis cov (X;Y ) = E[(X E[X])(Y E[Y])] = E[XY] E[X]E[Y] (exer complementise: che complementk the se complementond equality).
+Exer complementise 5.33.
+Che complementk that E[aX + bY] = aE[X] + bE[Y] and var (X + Y) = var (X) + var (Y) + 2 cov (X;Y ): Remark 5.34.
+We have now shown that the rules for cal complementulating expe complementtations (and derived quantities su complementh as varian complementes and covarian complementes) of continuous random variables are exa complementtly the same as for dis complementrete random variables.
+This isn't a coin complementiden complemente!
+We can make a more general de nition of expe complementtation whi complementh covers both cases (and more besides) but in order to do so we need a more general theory of integration, whi complementh some of you will see in the Part A Integration course.
+Example 5.35.
+Let 1 <  < 1.
+The standard bivariate normal distribution has joint density fX;Y(x;y) = 1 2p 1 2 exp  1 2(1 2)(x2 2xy + y2) forx;y2 R.
+What are the marginal distributions of XandY?
+Find the covarian complemente of XandY.
+Proof.
+We have fX(x) = Z1  11 2p 1 2 exp  1 2(1 2)(x2 2xy + y2) dy = Z1  11 2p 1 2 exp  1 2(1 2)[(y x)2 + x2(1 2)] dy = 1 p 2e x2 = 2 Z1  11 p 2(1 2)exp  (y x)2 2(1 2) dy: But the integrand is now the density of a normal random variable with mean xand varian complemente 1 2.
+So it integrates to 1 and we are left with fX(x) = 1 p 2e x2 = 2: SoXN(0;1) and, by symmetry, the same is true for Y.
+Noti complemente that XandYare only independent if  = 0.
+61
+
+Sin complementeXandYboth have mean 0, we only need to cal complementulate E[XY].
+We can use a similar tri complementk: E[XY] = Z1  1 Z1  1 xy 2p 1 2 exp  1 2(1 2)(x2 2xy + y2) dydx = Z1  1 xp 2e x2 = 2 Z1  1 yp 2(1 2)exp  (y x)2 2(1 2) dydx: The inner integral now gives us the mean of a N( x;1 2) random variable, whi complementh is x.
+So we get cov (X;Y ) = Z1  1x2 p 2e x2 = 2 dx = E X2 = ; sin complementeE X2 = 1.
+This yields the interesting con complementlusion that standard bivariate normal random variables Xand Yare independent if and only if their covarian complemente is 0.
+This is a ni complemente property of normal random variables whi complementh is not true for general random variables, as we have already observed in the dis complementrete case.
+62
+
+Chapter 6 Random samples and the weak law of large numbers One of the reasons that we are interested in sequen complementes of i.i.d.
+random variables is that we can view them as repeated samples from some underlying distribution.
+De nition 6.1.
+LetX1;X2;:::;Xndenote i.i.d.
+random variables.
+Then these random variables are said to constitute a random sample of sizenfrom the distribution.
+Statisti complements often involves random samples where the underlying distribution (the \parent dis - tribution" ) is unknown.
+A realisation of su complementh a random sample is used to make inferen complementes about the parent distribution.
+Suppose, for example, we want to know about the mean of the parent distribution.
+An important estimator is the sample mean.
+De nition 6.2.
+The sample mean is de ned to be Xn = 1 nnX i = 1 Xi.
+This is a key random variable whi complementh itself has an expe complementtation and a varian complemente.
+Re complementall that for random variables XandY(dis complementrete or continuous), var (X + Y) = var (X) + var (Y) + 2 cov (X;Y ): We can extend this (by indu complementtion) to nrandom variables as follows: var nX i = 1 Xi!
+= nX i = 1 var (Xi) + X i6 = j complementov (Xi;Xj) = nX i = 1 var (Xi) + 2 X i < j complementov (Xi;Xj): Theorem 6.3.
+Suppose that X1;X2;:::;Xnform a random sample from a distribution with mean and varian complemente 2.
+Then the expe complementtation and varian complemente of the sample mean are EXn = and var Xn = 1 n2: Proof.
+We have E[Xi] = and var (Xi) = 2 for 1in.
+So by linearity of expe complementtation and the varian complemente rules re complementalled above, EXn = E" 1 nnX i = 1 Xi# = 1 nnX i = 1 E[Xi] = ; var Xn = var 1 nnX i = 1 Xi!
+= 1 n2 var nX i = 1 Xi!
+= 1 n2 nX i = 1 var (Xi) = 1 n2; sin complemente independen complemente implies that cov ( Xi;Xj) = 0 for all i6 = j.
+63
+
+Example 6.4.
+LetX1;:::;Xnbe a random sample from a Bernoulli distribution with parameter p.
+Then E[Xi] = p,var (Xi) = p(1 p)for all 1in.
+Hen complemente, EXn = pandvar Xn = p(1 p) = n.
+In order for Xnto be a good estimator of the mean, we would like to know that for large sample sizes n,Xnis not too far away from i.e.
+thatjXn jis small.
+The result whi complementh tells us that this is true is called the law of large numbers and is of fundamental importan complemente in probability.
+Before we state it, let's step away from the sample mean and consider a more basi complement situation.
+Suppose that Ais an event with probability P(A) and write p = P(A).
+LetXbe the indi complementator fun complementtion of the event A, i.e.
+the random variable de ned by X(!) = 1 A(!) = ( 1 if!2 A 0 if!
+= 2 A: ThenXBer(p) and E[X] = p.
+Suppose now that we perform our experiment repeatedly and letXibe the indi complementator of the event that Ao complementcurs on the ith trial.
+Our intuitive notion of probability leads us to believe that if the number nof trials is large then the proportion of the time thatAo complementcurs should be close to pi.e.
+1 nnX i = 1 Xi p should be small.
+So proving that the sample mean is close to the true mean in this situation will also provide some justi cation for the way we have set up our mathemati complemental theory of probability.
+Theorem 6.5 (Weak law of large numbers) .Suppose that X1;X2;::: are independent and iden - ti complementally distributed random variables with mean .
+Then for any xed  > 0, P 1 nnX i = 1 Xi  > !
+!0 asn!1 .
+(Equivalently, we could have put P 1 nnX i = 1 Xi  !
+!1 asn!1 .) In other words, the probability that the sample mean deviates from the true mean by more than some small quantity tends to 0 as n!1 .
+Noti complemente that the result only depends on the underlying distribution through its mean.
+We will give a proof of the weak law under an additional assumption that the varian complemente of the distribution is nite.
+To do that, we'll rst prove a couple of very useful inequalities.
+Theorem 6.6 (Markov's inequality) .Suppose that Yis a non - negative random variable whose expe complementtation exists.
+Then P(Yt)E[Y] t for allt > 0.
+64
+
+Proof.
+LetA = fYtg.
+We may assume that P(A)2(0;1), sin complemente otherwise the result is trivially true.
+Then by the law of total probability for expe complementtations, E[Y] = E[YjA]P(A) + E[YjA complement]P(A complement)E[YjA]P(A); sin complementeP(A complement) > 0 and E[YjA complement]0.
+Now, we certainly have E[YjA] = E[YjYt]t.
+So, rearranging, we get P(Yt)E[Y] t as we wanted.
+Theorem 6.7 (Chebyshev's inequality) .Suppose that Zis a random variable with a nite vari - an complemente.
+Then for any t > 0, P(jZ E[Z]jt)var (Z) t2: Proof.
+Note that P(jZ E[Z]jt) = P  (Z E[Z])2t2 and then apply Markov's inequality to the non - negative random variable Y = (Z E[Z])2.
+Proof of Theorem 6.5 (under the assumption of nite varian complemente).
+Suppose the common distribution of the random variables Xihas meanand varian complemente 2.
+Set Z = 1 nnX i = 1 Xi: As we saw in Theorem 6.3, E[Z] = and var (Z) = var 1 nnX i = 1 Xi!
+= 2 n: So by Chebyshev's inequality, P 1 nnX i = 1 Xi  > !
+2 n2: Sin complemente > 0 is xed, the right - hand side tends to 0 as n!1 .
+65
+
+Appendix A.1 Useful ideas from Analysis Here are brief details of some ideas about sets, sequen complementes, and series, that it will be useful to make referen complemente to.
+Those doing the Analysis I course in Maths this term will see all of this in mu complementh greater detail!
+Countability A setSis complementountable if either it's nite, or its elements can be written as a list: S = fx1;x2;x3;:::g.
+Put another way, Sis countable if there is a bije complementtion from a subset of NtoS.
+The set Nitself is countable; so is the set of rational numbers Q, for example.
+The set of real numbers Ris not countable.
+Limits Even if you haven't seen a de nition, you probably have an idea of what it means for a sequen complemente to converge to a limit.
+Formally, we say that a sequen complemente of real numbers ( a1;a2;a3;:::) converges to a limitL2 Rif the following holds: for all  > 0, there exists N2 Nsu complementh thatjan Lj whenevernN.
+Then we may write \ L = limn!1 an", or \an!Lasn!1 ".
+In nite sums Finite sums are easy.
+If we have a sequen complemente ( a1;a2;a3;:::), then for any n2 Nwe can de ne sn = nX k = 1 ak = a1 + a2 +  + an: What do we mean by the in nite sumP1 k = 1 ak?
+An in nite sum is really a sort of limit.
+If the limitL = limn!1 snexists, then we say that the seriesP1 k = 1 ak complementonverges , and that its sum is L.
+If the sequen complemente ( sn;n2 N) does not have a limit, then we say that the seriesP1 k = 1 akdiverges .
+An important idea for our purposes will be absolute convergen complemente of a series.
+We say that the seriesP1 k = 1 ak complementonverges absolutely if the seriesP1 k = 1 jakj complementonverges.
+If a series converges absolutely, then it also converges.
+One reason why absolute convergen complemente is important is that it guarantees that the value of a sum doesn't depend on the order of the terms.
+In the de nition of expe complementtation of a dis complementrete random variable, for example, we may have an in nite sum and no reason to take the terms in any parti complementular order.
+Formally, suppose fis a bije complementtion from NtoN, and de ne bk = af(k).
+If the seriesP1 k = 1 ak complementonverges absolutely, then so does the seriesP1 k = 1 bk, and the sumsP1 k = 1 ak andP1 k = 1 bkare equal.
+An example of a series that converges but does not converge absolutely is the series 1  1 2 + 1 3 1 4 + 1 5 :::, whose sum is ln 2.
+66
+
+If we reorder the terms as 1 + 1 3 1 2 + 1 5 + 1 7 1 4 + 1 9 + 1 11 1 6 + :::, then the sum instead be complementomes3 2 ln 2.
+Power series A (real) power series is a fun complementtion of the form f(x) = 1 X k = 0 ckxk where the coecients ck;k0 are real constants.
+For any su complementh series, there exists a radius of convergen complemente R2[0;1)[1, su complementh thatP1 k = 0 ckxk complementonverges absolutely for jxj < R, and not for jxj > R.
+In this course we will meet a parti complementular class of power series called probability generating fun complementtions , with the property that the coecients ckare non - negative and sum to 1.
+In that case, Ris at least 1.
+Power series behave well when di erentiated!
+A power series f(x) = P1 k = 0 ckxkwith radius of convergen complemente Ris di erentiable on the interval (  R;R), and its derivative is also a power series with radius of convergen complemente R, given by f0(x) = 1 X k = 0(k + 1)ck + 1 xk: Series identities Here is a reminder of some useful identities: Geometri complement series : ifa2 Rand 0r < 1 then n 1 X k = 0 ark = a(1 rn) 1 r and1 X k = 0 ark = a 1 r: Exponential fun complementtion : for2 R, 1 X n = 0n n!
+= e: Binomial theorem : forx;y2 Randn0, (x + y)n = nX k = 0n k xkyn k: Di erentiation and integration give us variants of these.
+For example, for 0 < r < 1, 1 X k = 1 krk 1 = d dr 1 X k = 0 rk!
+and 1 X k = 1 rk k = Zr 0 1 X k = 0 tk!
+dt: 67
+
+A.2 In complementreasing sequen complementes of events We mentioned the following result in the later part of the course.
+A sequen complemente of events An;n1 is called in complementreasing ifA1A2A3:::.
+Proposition A.8.
+IfAn;n1 is an in complementreasing sequen complemente of events, then P 1[ n = 1 An!
+= lim n!1 P(An): Proof.
+The proof uses countable additivity.
+Using the fa complementt that the sequen complemente is in complementreasing, we can writeAnas a disjoint union An = A1[(A2 nA1)[(A3 nA2)[[ (AnnAn 1); and similarly, we can writeS1 n = 1 Anas a disjoint union 1[ k = 1 Ak = A1[1[ k = 2(AknAk 1): Then applying the countable additivity axiom twi complemente, we have P 1[ k = 1 Ak!
+= P(A1) + 1 X k = 2 P(AknAk 1) = lim n!1" P(A1) + nX k = 2 P(AknAk 1)# (sin complemente by de nition of an in nite sum,1 P k = 2 bk = lim n!1 nP k = 2 bk.) = lim n!1 P(An): 68
+
+Common dis complementrete distributions Distribution Probability mass fun complementtion Mean Varian complemente Generating fun complementtion Uniform Uf1;2;:::;ng, n2 NP(X = k) = 1 n;1knn + 1 2 n2 1 12 GX(s) = s sn + 1 n(1 s) Bernoulli Ber(p), p2[0;1]P(X = 1) = p,P(X = 0) = 1 p pp(1 p)GX(s) = 1 p + ps Binomial Bin(n;p),n2 N;p2[0;1]P(X = k) = n k pk(1 p)n k,k = 0;1;:::;n npnp(1 p)GX(s) = (1 p + ps)n Poisson Po(),0 P(X = k) = k k!e ,k = 0;1;2;::: GX(s) = e(s 1) Geometri complement Geom(p), p2[0;1]P(X = k) = (1 p)k 1 p,k = 1;2;:::1 p1 p p2 GX(s) = ps 1 (1 p)s Alternative geometri complement , p2[0;1]P(X = k) = (1 p)kp,k = 0;1;:::1 p p1 p p2 GX(s) = p 1 (1 p)s Negative binomial NegBin(k;p), k2 N;p2 [0;1]P(X = n) = n 1 k 1 (1 p)n kpk,n = k;k + 1;:::k pk(1 p) p2 GX(s) =  ps 1 (1 p)sk 69
+
+Common continuous distributions Distribution Probability density fun complementtion Cumulative distribution fun complementtion Mean Varian complemente Uniform U[a;b],a < bfX(x) = 1 b a; axb FX(x) = x a b a,axba + b 2(b a)2 12 Exponential Exp(),0 fX(x) = e x; x0 FX(x) = 1 e x,x > 01 1 2 Gamma Gamma( ;), > 0;0 fX(x) =   ( )x  1 e x,x0  2 Normal N(;2), 2 R,2 > 0 fX(x) = 1 p 22 e (x )2 22,x2 R FX(x) = x    2 Standard Normal N(0;1)fX(x) = 1 p 2e x2 2,x2 R FX(x) = (x) = Zx  11 p 2e u2 2 du 0 1 Beta Beta( ; )fX(x) =  ( + )  ( ) ( )x  1(1 x)  1,x2[0;1] + ( + )2( + + 1) 70
+
